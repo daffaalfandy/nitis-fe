@@ -13,15 +13,15 @@ const routes = [
   },
 ];
 
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+});
+
 // set page title
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   next();
-});
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
 });
 
 export default router;
