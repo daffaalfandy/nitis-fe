@@ -4,13 +4,13 @@
       <header class="container mx-auto">
         <nav class="flex justify-between items-center mx-4">
           <div style="height: 40px">
-            <a href="#">
+            <router-link to="/" tag="a">
               <img
                 src="../assets/img/logo.svg"
                 class="h-full"
                 alt="nitis logo"
               />
-            </a>
+            </router-link>
           </div>
           <!-- START Unauthenticate User -->
           <ul class="flex items-center text-sm">
@@ -80,23 +80,57 @@
         class="md:flex text-center justify-center py-3 md:py-6 text-lg text-white"
         id="main-navbar"
       >
-        <li class="px-5 nav mx-20 md:mx-1 my-3 md:my-0">
-          <router-link to="/sinopsis" tag="a">Sinopsis</router-link>
-        </li>
-        <li class="px-5 nav mx-20 md:mx-1 my-3 md:my-0">
-          <router-link to="/pricing" tag="a">Harga Tiket</router-link>
-        </li>
-        <li class="px-5 nav mx-20 md:mx-1 my-3 md:my-0">
-          <router-link to="/merchandise" tag="a">Merchandise</router-link>
-        </li>
-        <li class="px-5 nav mx-20 md:mx-1 my-3 md:my-0">
-          <router-link to="/policy" tag="a">Aturan & Regulasi</router-link>
-        </li>
-        <li class="px-5 nav mx-20 md:mx-1 my-3 md:my-0">
-          <router-link to="/about" tag="a">Tentang Kami</router-link>
-        </li>
+        <router-link
+          to="/sinopsis"
+          active-class="active"
+          tag="li"
+          class="px-5 nav mx-20 md:mx-1 my-3 md:my-0"
+          exact
+        >
+          Sinopsis
+        </router-link>
+        <router-link
+          to="/pricing"
+          active-class="active"
+          tag="li"
+          class="px-5 nav mx-20 md:mx-1 my-3 md:my-0"
+          exact
+        >
+          Harga Tiket
+        </router-link>
+        <router-link
+          to="/merchandise"
+          active-class="active"
+          tag="li"
+          class="px-5 nav mx-20 md:mx-1 my-3 md:my-0"
+          exact
+        >
+          Merchandise
+        </router-link>
+        <router-link
+          to="/policy"
+          active-class="active"
+          tag="li"
+          class="px-5 nav mx-20 md:mx-1 my-3 md:my-0"
+          exact
+        >
+          Aturan & Regulasi
+        </router-link>
+        <router-link
+          to="/about"
+          active-class="active"
+          tag="li"
+          class="px-5 nav mx-20 md:mx-1 my-3 md:my-0"
+          exact
+        >
+          Tentang Kami
+        </router-link>
       </ul>
     </nav>
+  </section>
+
+  <section id="main">
+    <router-view></router-view>
   </section>
 
   <footer id="footer" style="background-color: #2b2869">
