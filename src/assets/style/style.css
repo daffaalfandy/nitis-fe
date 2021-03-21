@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Maragsa";
+  src: url("../fonts/Maragsa-Display.otf");
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container-bg {
+  background-image: url("../img/bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 92vh;
+  display: block;
+}
+.container-date {
+  background-image: url("../img/bg-date.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-trailer {
+  background-image: url("../img/bg-trailer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.sinopsis-section {
+  background-image: url("../img/section-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+.price-section {
+  background-image: url("../img/bg-ticket.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+.section-title {
+  font-family: "Maragsa", sans-serif;
+  color: #da622a;
+  font-weight: 700;
+}
+.section-title-white {
+  font-family: "Maragsa", sans-serif;
+  color: white;
+  font-weight: 700;
+}
+.sinopsis-bg {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  max-height: 100%;
+  max-width: 100%;
+}
+.sinopsis-container {
+  background-image: url("../img/bg-sinopsis.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+.tc-container {
+  background-image: url("../img/bg-sinopsis.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.merchant-section {
+  background-image: url("../img/bg-merchant.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+
+.auth-bg {
+  background-image: url("../img/bg-login.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+
+.auth-bg-right {
+  background-image: url("../img/bg-auth-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+
+.ticket-bg-right {
+  background-image: url("../img/bg-ticket-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+
+.bundle-1 {
+  background-image: url("../img/shirt-masker-ticket.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bundle-2 {
+  background-image: url("../img/shirt-ticket.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bundle-3 {
+  background-image: url("../img/ticket.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bg-feedback-left {
+  background-image: url("../img/bg-ticket-feedback-left-min.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+.bg-feedback-right {
+  background-image: url("../img/bg-ticket-feedback-right-min-2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}

@@ -3,3 +3,143 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.btn-primary {
+  @apply px-4 py-2 text-white;
+  background-color: #2b2869;
+}
+
+.btn-primary:hover {
+  @apply bg-purple-700 transition duration-300;
+}
+
+.btn-secondary {
+  @apply px-10 bg-red-600 py-1 text-white text-lg tracking-wide;
+}
+
+.btn-secondary:hover {
+  @apply bg-red-800 transition duration-300;
+}
+
+.btn-auth {
+  @apply px-10 py-1 text-white text-lg tracking-wide;
+  background-color: #da622a;
+}
+
+.btn-auth:hover {
+  @apply bg-red-800 transition duration-300;
+}
+
+.active {
+  @apply rounded-tl-2xl rounded-br-2xl;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 33%),
+    0 10px 10px -5px rgb(0 0 0 / 37%);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  background-color: #2b2869;
+}
+
+.nav:hover {
+  @apply shadow-lg bg-purple-700 rounded-tl-2xl rounded-br-2xl;
+}
+
+.price-card {
+  @apply w-96 h-32 p-0 rounded-tl-2xl rounded-br-2xl shadow-lg flex flex-row;
+}
+
+.price-card-1 {
+  margin-left: 15%;
+  margin-right: 85%;
+}
+
+.price-card-2 {
+  margin-left: 35%;
+  margin-right: 65%;
+}
+
+.price-card-3 {
+  margin-left: 55%;
+  margin-right: 45%;
+}
+
+.price-card:hover {
+  @apply shadow-2xl transition duration-500;
+}
+
+.price-card-left {
+  @apply w-1/3 bg-yellow-600 rounded-tl-2xl h-full;
+}
+
+.price-card-title {
+  @apply pl-5 pt-4 font-medium;
+  color: #2b2869;
+}
+.price-card-subtitle {
+  @apply pl-5 text-gray-500 font-light text-sm py-1 mb-3;
+}
+
+.price-card-price {
+  @apply ml-5 px-3 py-1 mt-2 text-white rounded-tl-2xl rounded-br-2xl shadow-2xl;
+  background-color: #2b2869;
+}
+.section-title {
+  @apply text-4xl md:text-6xl pb-1 text-center pt-20 tracking-wider;
+}
+.section-title-white {
+  @apply text-4xl md:text-6xl pb-1 text-center pt-20 tracking-wider;
+}
+
+.section-line {
+  @apply w-1/5;
+  border-top: 4px solid #2b2869;
+  margin-left: 55%;
+  margin-right: 45%;
+}
+
+.merchant-image-grid {
+  @apply grid grid-cols-3 pt-10 px-32;
+}
+
+.auth-title {
+  @apply font-medium text-4xl text-white text-left w-full;
+  font-family: "Maragsa", sans-serif;
+}
+
+.input-label {
+  @apply text-white text-lg pt-5 text-left w-full;
+}
+.form-control {
+  @apply w-full h-9 rounded-tr-xl rounded-bl-xl;
+}
+
+.ticket-option {
+  @apply px-5 py-3 rounded-tl-2xl rounded-br-2xl;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.ticket-option:hover {
+  @apply transition duration-300 shadow-2xl text-white;
+  background-color: #da622a;
+}
+
+.ticket-option-active {
+  @apply px-5 py-3 rounded-tl-2xl rounded-br-2xl text-white;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+  background-color: #da622a;
+}
+
+.ticket-bundle {
+  @apply rounded-tl-2xl w-1/3 rounded-br-2xl p-5;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.ticket-bundle:hover {
+  @apply transition duration-300;
+  background-color: #da622a;
+}
+
+.ticket-bundle-active {
+  @apply rounded-tl-2xl w-1/3 rounded-br-2xl p-5;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  background-color: #da622a;
+}
