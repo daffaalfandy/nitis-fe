@@ -10,6 +10,10 @@ import HomePolicy from "../components/HomePolicy";
 import HomePricing from "../components/HomePricing";
 import HomeAbout from "../components/HomeAbout";
 
+// auth section
+import Login from "../views/Login";
+import Register from "../views/Register";
+
 const DEFAULT_TITLE = APP_NAME;
 
 const routes = [
@@ -51,6 +55,18 @@ const routes = [
         meta: { title: `${DEFAULT_TITLE} | Tentang Kami` },
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    meta: { title: `${DEFAULT_TITLE} | Masuk` },
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
+    meta: { title: `${DEFAULT_TITLE} | Daftar` },
   },
 ];
 

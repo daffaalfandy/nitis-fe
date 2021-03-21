@@ -15,17 +15,18 @@
           <!-- START Unauthenticate User -->
           <ul class="flex items-center text-sm">
             <li>
-              <a
-                href="/dist/login.html"
+              <router-link
+                to="/login"
+                tag="a"
                 class="px-4 py-2 hover:underline"
-                style="color: #2b2869"
-                >Masuk</a
+              >
+                Masuk</router-link
               >
             </li>
             <li>
-              <a href="/dist/register.html" class="px-2 md:px-4 py-2">
+              <router-link to="/register" tag="a" class="px-2 md:px-4 py-2">
                 <button class="btn-primary">Daftar</button>
-              </a>
+              </router-link>
             </li>
           </ul>
           <!-- END Unauthenticate User -->
