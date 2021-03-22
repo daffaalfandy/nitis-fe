@@ -14,6 +14,10 @@ import HomeAbout from "../components/HomeAbout";
 import Login from "../views/Login";
 import Register from "../views/Register";
 
+// ticket section
+import Ticket from "../views/Ticket";
+import TicketConfirmation from "../views/TicketConfirmation";
+
 const DEFAULT_TITLE = APP_NAME;
 
 const routes = [
@@ -67,6 +71,18 @@ const routes = [
     name: "Register",
     component: Register,
     meta: { title: `${DEFAULT_TITLE} | Daftar` },
+  },
+  {
+    path: "/ticket",
+    name: "Ticket",
+    component: Ticket,
+    meta: { title: `${DEFAULT_TITLE} | Beli Tiket` },
+  },
+  {
+    path: "/ticket-confirmation",
+    name: "Ticket Confirmation",
+    component: TicketConfirmation,
+    meta: { title: `${DEFAULT_TITLE} | Konfirmasi Tiket` },
   },
 ];
 

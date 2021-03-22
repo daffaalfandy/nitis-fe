@@ -47,7 +47,9 @@
               <img src="../assets/img/cantrik-word.png" alt="cantrik" />
             </div>
             <div class="pt-2">
-              <a href="/dist/ticket.html" class="btn-secondary"> Beli Tiket </a>
+              <router-link to="/ticket" tag="a" class="btn-secondary"
+                >Beli Tiket</router-link
+              >
             </div>
           </div>
           <div class="my-20 md:my-auto md:w-1/2 justify-end flex">
