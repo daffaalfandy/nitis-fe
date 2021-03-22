@@ -133,7 +133,11 @@
   </section>
 
   <section id="main">
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <FadeInOut entry="center" exit="bottom" :duration="500" mode="out-in">
+        <component :is="Component" />
+      </FadeInOut>
+    </router-view>
   </section>
 
   <footer id="footer" style="background-color: #2b2869">
@@ -198,7 +202,10 @@
 </template>
 
 <script>
-export default {
-  name: "Home",
-};
+import { defineComponent } from "vue";
+import { FadeInOut } from "vue3-transitions";
+
+export default defineComponent({
+  components: { FadeInOut },
+});
 </script>
