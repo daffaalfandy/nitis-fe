@@ -190,8 +190,26 @@ export default {
         this.form.account_number === "" &&
         this.form.name === ""
       ) {
-        // swal here
+        this.$swal({
+          icon: "error",
+          title: "Oops...",
+          text: "Silahkan isi semua baris dengan benar!",
+        });
       } else {
+        // handle post to backend
+        this.$swal.fire({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", this.$swal.stopTimer);
+            toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+          },
+          icon: "success",
+          title: "Pemesanan tiket berhasil",
+        });
         this.$router.push({ name: "Ticket Feedback" });
       }
     },
