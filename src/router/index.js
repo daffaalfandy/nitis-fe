@@ -17,6 +17,7 @@ import Register from "../views/Register";
 // ticket section
 import Ticket from "../views/Ticket";
 import TicketConfirmation from "../views/TicketConfirmation";
+import TicketFeedback from "../views/TicketFeedback";
 
 const DEFAULT_TITLE = APP_NAME;
 
@@ -83,6 +84,20 @@ const routes = [
     name: "Ticket Confirmation",
     component: TicketConfirmation,
     meta: { title: `${DEFAULT_TITLE} | Konfirmasi Tiket` },
+    beforeEnter: (to, from, next) => {
+      if (from.name !== "Ticket") next({ name: "Home" });
+      else next();
+    },
+  },
+  {
+    path: "/feedback",
+    name: "Ticket Feedback",
+    component: TicketFeedback,
+    meta: { title: `${DEFAULT_TITLE} | Terimakasih` },
+    beforeEnter: (to, from, next) => {
+      if (from.name !== "Ticket Confirmation") next({ name: "Home" });
+      else next();
+    },
   },
 ];
 
