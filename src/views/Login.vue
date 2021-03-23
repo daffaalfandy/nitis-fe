@@ -80,6 +80,8 @@ export default {
   methods: {
     async onSubmit() {
       // Handle login action
+      let loader = this.useLoading(); // adding page loader
+      loader.show(); // show page loader
       await this.$store.dispatch("login", this.form);
       if (
         Object.keys(this.user).length === 0 &&
@@ -106,6 +108,7 @@ export default {
           this.$router.push({ path: "/" }); // route back to home
         }
       }
+      loader.hide(); // hide page loader
     },
   },
   computed: {

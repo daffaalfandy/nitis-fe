@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createRouter, createWebHistory } from "vue-router";
 import { APP_NAME } from "../../env";
+import store from "../store/index";
 import Home from "../views/Home.vue";
 
 // home section
@@ -66,12 +67,32 @@ const routes = [
     name: "Login",
     component: Login,
     meta: { title: `${DEFAULT_TITLE} | Masuk` },
+    beforeEnter: (to, from, next) => {
+      if (
+        Object.keys(store.getters.user).length === 0 &&
+        store.getters.user.constructor === Object
+      ) {
+        next();
+      } else {
+        next({ path: "/" });
+      }
+    },
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
     meta: { title: `${DEFAULT_TITLE} | Daftar` },
+    beforeEnter: (to, from, next) => {
+      if (
+        Object.keys(store.getters.user).length === 0 &&
+        store.getters.user.constructor === Object
+      ) {
+        next();
+      } else {
+        next({ path: "/" });
+      }
+    },
   },
   {
     path: "/ticket",

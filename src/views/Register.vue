@@ -109,6 +109,8 @@ export default {
     async onSubmit() {
       if (this.form.password === this.form.password_conf) {
         this.wrong = false;
+        let loader = this.useLoading(); // adding page loader
+        loader.show(); // show page loader
         // handle register action
         await this.$store.dispatch("register", this.form); // post register
         if (!this.status) {
@@ -133,6 +135,7 @@ export default {
           });
           this.$router.push({ path: "/login" }); // route to login page
         }
+        loader.hide(); // hide page loader
       } else {
         this.wrong = true;
       }
