@@ -97,6 +97,11 @@ export default {
   },
   methods: {
     onSubmit() {
+      this.$swal({
+        icon: "error",
+        title: "Oops...",
+        text: "Fitur dalam tahap pengembangan",
+      });
       if (this.form.password === this.form.password_conf) {
         // handle register action
         console.log("Register");

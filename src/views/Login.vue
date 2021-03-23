@@ -77,6 +77,11 @@ export default {
   },
   methods: {
     onSubmit() {
+      this.$swal({
+        icon: "error",
+        title: "Oops...",
+        text: "Fitur dalam tahap pengembangan",
+      });
       // Handle login action
       console.log(this.form);
     },

@@ -233,6 +233,11 @@ export default {
       }
     },
     onSubmit() {
+      this.$swal({
+        icon: "error",
+        title: "Oops...",
+        text: "Fitur dalam tahap pengembangan",
+      });
       // handle post to backend
       this.$router.push({ name: "Ticket Confirmation" });
     },
