@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Login",
   data() {
@@ -76,10 +78,38 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       // Handle login action
-      console.log(this.form);
+      await this.$store.dispatch("login", this.form);
+      if (
+        Object.keys(this.user).length === 0 &&
+        this.user.constructor === Object
+      ) {
+        this.$swal({
+          icon: "error",
+          title: "Oops...",
+          text: this.errors.message,
+        });
+      } else {
+        if (!this.status) {
+          this.$swal({
+            icon: "error",
+            title: "Oops...",
+            text: this.errors.message,
+          });
+        } else {
+          this.$cookie.setCookie("user", this.user); // set cookies
+          this.$cookie.setCookie("token", this.token); // set cookies
+          this.axios.defaults.headers.common[
+            "Authorization"
+          ] = `Bearer ${this.token}`; // set http request header
+          this.$router.push({ path: "/" }); // route back to home
+        }
+      }
     },
+  },
+  computed: {
+    ...mapGetters(["user", "status", "errors", "token"]),
   },
 };
 </script>
