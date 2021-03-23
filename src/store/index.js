@@ -40,6 +40,15 @@ export default createStore({
         commit("setErrors", err.response.data);
       }
     },
+    async register({ commit }, payload) {
+      try {
+        await axios.post(`${URI}`, payload);
+        commit("setStatus", { success: true });
+      } catch (err) {
+        commit("setStatus", { success: false });
+        commit("setErrors", err.response.data);
+      }
+    },
   },
   modules: {},
 });
