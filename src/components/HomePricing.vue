@@ -8,8 +8,8 @@
         </div>
         <!-- Price Card -->
         <div id="price-card">
-          <div class="pt-20 w-full items-center">
-            <div class="price-card md:price-card-1">
+          <div class="pt-10 md:pt-20 w-full px-4 md:px-0 items-center">
+            <div class="price-card" id="price-card-1">
               <div
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
@@ -25,8 +25,8 @@
               </div>
             </div>
           </div>
-          <div class="pt-20 w-full items-center">
-            <div class="price-card md:price-card-2">
+          <div class="pt-10 md:pt-20 w-full px-4 md:px-0 items-center">
+            <div class="price-card" id="price-card-2">
               <div
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
@@ -40,8 +40,8 @@
               </div>
             </div>
           </div>
-          <div class="pt-20 w-full items-center mb-10">
-            <div class="price-card md:price-card-3">
+          <div class="pt-10 md:pt-20 w-full px-4 md:px-0 items-center mb-10">
+            <div class="price-card" id="price-card-3">
               <div
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
@@ -65,3 +65,15 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  mounted() {
+    if (screen.width >= 768) {
+      document.getElementById("price-card-1").classList.toggle("price-card-1");
+      document.getElementById("price-card-2").classList.toggle("price-card-2");
+      document.getElementById("price-card-3").classList.toggle("price-card-3");
+    };
+  }
+}
+</script>
