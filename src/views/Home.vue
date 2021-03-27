@@ -19,6 +19,7 @@
                 to="/login"
                 tag="a"
                 class="px-4 py-2 hover:underline"
+                style="color: #2b2869"
               >
                 Masuk</router-link
               >
@@ -80,7 +81,7 @@
       style="background-image: linear-gradient(#c32e4e, #da622a)"
     >
       <ul
-        class="md:flex text-center justify-center py-3 md:py-6 text-lg text-white"
+        class="md:flex text-center justify-center py-5 md:py-6 text-lg text-white"
         id="main-navbar"
       >
         <router-link

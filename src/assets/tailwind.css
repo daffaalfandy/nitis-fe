@@ -44,7 +44,7 @@
 }
 
 .price-card {
-  @apply w-96 h-32 p-0 rounded-tl-2xl rounded-br-2xl shadow-lg flex flex-row;
+  @apply w-full md:w-96 h-32 p-0 rounded-tl-2xl rounded-br-2xl shadow-lg flex flex-row;
 }
 
 .price-card-1 {
