@@ -68,10 +68,7 @@ const routes = [
     component: Login,
     meta: { title: `${DEFAULT_TITLE} | Masuk` },
     beforeEnter: (to, from, next) => {
-      if (
-        Object.keys(store.getters.user).length === 0 &&
-        store.getters.user.constructor === Object
-      ) {
+      if (store.getters.loginStatus === false) {
         next();
       } else {
         next({ path: "/" });
@@ -84,10 +81,7 @@ const routes = [
     component: Register,
     meta: { title: `${DEFAULT_TITLE} | Daftar` },
     beforeEnter: (to, from, next) => {
-      if (
-        Object.keys(store.getters.user).length === 0 &&
-        store.getters.user.constructor === Object
-      ) {
+      if (store.getters.loginStatus === false) {
         next();
       } else {
         next({ path: "/" });
@@ -99,6 +93,13 @@ const routes = [
     name: "Ticket",
     component: Ticket,
     meta: { title: `${DEFAULT_TITLE} | Beli Tiket` },
+    beforeEnter: (to, from, next) => {
+      if (store.getters.loginStatus === true) {
+        next();
+      } else {
+        next({ path: "/login" });
+      }
+    },
   },
   {
     path: "/ticket-confirmation",
@@ -106,7 +107,8 @@ const routes = [
     component: TicketConfirmation,
     meta: { title: `${DEFAULT_TITLE} | Konfirmasi Tiket` },
     beforeEnter: (to, from, next) => {
-      if (from.name !== "Ticket") next({ name: "Home" });
+      if (from.name !== "Ticket" || store.getters.loginStatus === false)
+        next({ name: "Home" });
       else next();
     },
   },
@@ -116,7 +118,11 @@ const routes = [
     component: TicketFeedback,
     meta: { title: `${DEFAULT_TITLE} | Terimakasih` },
     beforeEnter: (to, from, next) => {
-      if (from.name !== "Ticket Confirmation") next({ name: "Home" });
+      if (
+        from.name !== "Ticket Confirmation" ||
+        store.getters.loginStatus === false
+      )
+        next({ name: "Home" });
       else next();
     },
   },

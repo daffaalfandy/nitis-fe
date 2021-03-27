@@ -10,12 +10,14 @@ export default createStore({
     token: {},
     status: Boolean,
     errors: {},
+    loginStatus: Boolean,
   },
   getters: {
     user: (state) => state.user,
     token: (state) => state.token,
     errors: (state) => state.errors,
     status: (state) => state.status,
+    loginStatus: (state) => state.loginStatus,
   },
   mutations: {
     setUser: (state, payload) => {
@@ -28,6 +30,7 @@ export default createStore({
     setErrors: (state, payload) => {
       state.errors = payload;
     },
+    setLoginStatus: (state, payload) => (state.loginStatus = payload.status),
   },
   actions: {
     async login({ commit }, payload) {
@@ -35,9 +38,11 @@ export default createStore({
         const response = await axios.post(`${URI}/login`, payload);
         commit("setUser", response.data);
         commit("setStatus", { success: true });
+        commit("setLoginStatus", { status: true });
       } catch (err) {
         commit("setStatus", { success: false });
         commit("setErrors", err.response.data);
+        commit("setLoginStatus", { status: false });
       }
     },
     async register({ commit }, payload) {

@@ -38,4 +38,8 @@ const USER = VueCookieNext.getCookie("user");
 if (TOKEN !== null && USER !== null) {
   axios.defaults.headers.common["Authorization"] = `Bearer ${TOKEN}`;
   store.commit("setUser", { data: USER, token: TOKEN });
+  store.commit("setLoginStatus", { status: true });
+} else {
+  store.commit("setLoginStatus", { status: false });
+  store.commit("setUser", { user: {}, token: {} });
 }
