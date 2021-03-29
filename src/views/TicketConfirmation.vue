@@ -41,39 +41,30 @@
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      0374384313
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n ALIFIA GRESIANA R</div>
                   </div>
                 </div>
                 <div class="md:w-1/3 flex space-x-2">
                   <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
+                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32 object-center"
                     style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
+                  >
+                    <img
+                      src="../assets/img/pricing-logo-gopay.png"
+                      class="object-center object-cover my-auto"
+                      alt="gopay logo"
+                    />
+                  </div>
                   <div class="flex flex-col justify-center">
                     <div
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      087738256964
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
-                  </div>
-                </div>
-                <div class="md:w-1/3 flex space-x-2">
-                  <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
-                    style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
-                  <div class="flex flex-col justify-center">
-                    <div
-                      class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
-                      style="background-color: #2b2869"
-                    >
-                      688 6124 XXXX
-                    </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n ALIFIA</div>
                   </div>
                 </div>
               </div>
@@ -88,7 +79,7 @@
                     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
                   "
                 >
-                  Rp75.000,00
+                  {{ ticketInformation.ticket_price }}
                 </div>
               </div>
               <div class="w-full py-8 md:py-10">
@@ -157,6 +148,7 @@
               id="bank_source"
               name="bank_source"
               v-model="form.bank_source"
+              placeholder="Asal pembayaran"
             />
             <label for="norek" class="input-label">Nomor Rekening</label>
             <input
@@ -165,6 +157,7 @@
               id="norek"
               name="norek"
               v-model="form.account_number"
+              placeholder="Isikan nomor telp jika menggunakan Gopay"
             />
             <label for="name" class="input-label">Atas Nama</label>
             <input
@@ -173,6 +166,7 @@
               id="name"
               name="name"
               v-model="form.name"
+              placeholder="Atas nama"
             />
             <div class="w-full pt-7">
               <button type="submit" class="btn-auth">Konfirmasi</button>
@@ -188,7 +182,7 @@
 /* eslint-disable no-unreachable */
 import { mapGetters } from "vuex";
 
-const bankDestination = ["BRI", "OVO"];
+const bankDestination = ["BCA", "Gopay"];
 
 export default {
   name: "Ticket Confirmation",
