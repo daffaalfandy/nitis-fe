@@ -5,4 +5,5 @@ module.exports = {
   SERVER_URI: "http://localhost:3000/api",
   EXPIRED_COOKIES: "1d",
   YOUTUBE_ID: "",
+  ADMIN_URI: "http://localhost:8081",
 };
