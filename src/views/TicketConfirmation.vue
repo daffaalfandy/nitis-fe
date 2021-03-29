@@ -31,49 +31,42 @@
               <div
                 class="md:flex md:space-x-4 space-y-4 md:space-y-0 justify-between"
               >
-                <div class="md:w-1/3 flex space-x-2">
+                <div class="md:w-1/2 flex space-x-2">
                   <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
+                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32 flex content-center"
                     style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
+                  >
+                    <img
+                      src="../assets/img/bca-logo.svg"
+                      alt="logo bca"
+                      class="px-2"
+                    />
+                  </div>
                   <div class="flex flex-col justify-center">
                     <div
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      037 4384 313
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n Alifia Gresiana R</div>
                   </div>
                 </div>
-                <div class="md:w-1/3 flex space-x-2">
+                <div class="md:w-1/2 flex space-x-2">
                   <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
+                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32 flex content-center"
                     style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
-                  <div class="flex flex-col justify-center">
-                    <div
-                      class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
-                      style="background-color: #2b2869"
-                    >
-                      688 6124 XXXX
-                    </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                  >
+                    <img src="../assets/img/gopay-logo.svg" alt="logo gopay" />
                   </div>
-                </div>
-                <div class="md:w-1/3 flex space-x-2">
-                  <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
-                    style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
                   <div class="flex flex-col justify-center">
                     <div
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      0877 3825 6964
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n Alifia Gresiana R</div>
                   </div>
                 </div>
               </div>
@@ -88,7 +81,7 @@
                     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
                   "
                 >
-                  Rp75.000,00
+                  {{ ticketInformation.ticket_price }}
                 </div>
               </div>
               <div class="w-full py-8 md:py-10">
@@ -137,13 +130,27 @@
             class="w-full"
             style="display: contents"
           >
-            <label for="origin" class="input-label">Asal Bank</label>
+            <label class="input-label" for="bank_destination"
+              >Bank Tujuan</label
+            >
+            <select
+              name="bank_destination"
+              id="bank_destination"
+              class="form-control"
+              v-model="form.bank_destination"
+            >
+              <template v-for="bank in bank_destination" :key="bank">
+                <option :value="bank">{{ bank }}</option>
+              </template>
+            </select>
+            <label for="bank_source" class="input-label">Asal Bank</label>
             <input
               type="text"
               class="form-control"
-              id="origin"
-              name="origin"
-              v-model="form.origin"
+              id="bank_source"
+              name="bank_source"
+              v-model="form.bank_source"
+              placeholder="Asal pembayaran"
             />
             <label for="norek" class="input-label">Nomor Rekening</label>
             <input
@@ -152,6 +159,7 @@
               id="norek"
               name="norek"
               v-model="form.account_number"
+              placeholder="Isikan nomor telp jika menggunakan Gopay"
             />
             <label for="name" class="input-label">Atas Nama</label>
             <input
@@ -160,6 +168,7 @@
               id="name"
               name="name"
               v-model="form.name"
+              placeholder="Atas nama"
             />
             <div class="w-full pt-7">
               <button type="submit" class="btn-auth">Konfirmasi</button>
@@ -172,21 +181,28 @@
 </template>
 
 <script>
+/* eslint-disable no-unreachable */
+import { mapGetters } from "vuex";
+
+const bankDestination = ["BCA", "Gopay"];
+
 export default {
   name: "Ticket Confirmation",
   data() {
     return {
       form: {
-        origin: "",
+        bank_source: "",
         account_number: "",
         name: "",
+        bank_destination: "",
       },
+      bank_destination: bankDestination,
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       if (
-        this.form.origin === "" &&
+        this.form.bank_source === "" &&
         this.form.account_number === "" &&
         this.form.name === ""
       ) {
@@ -197,22 +213,58 @@ export default {
         });
       } else {
         // handle post to backend
-        this.$swal.fire({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener("mouseenter", this.$swal.stopTimer);
-            toast.addEventListener("mouseleave", this.$swal.resumeTimer);
-          },
-          icon: "success",
-          title: "Pemesanan tiket berhasil",
-        });
-        this.$router.push({ name: "Ticket Feedback" });
+        let loader = this.useLoading();
+        loader.show();
+
+        let ticketInformation = {};
+        ticketInformation = this.ticketInformation;
+        ticketInformation.ticket_id = this.user.ticket_id;
+
+        Object.assign(ticketInformation, this.form);
+
+        this.$store.commit("setTicketInformation", ticketInformation);
+        await this.$store.dispatch("updateTicketSubmitted");
+
+        if (!this.status) {
+          this.$swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", this.$swal.stopTimer);
+              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+            },
+            icon: "error",
+            title:
+              "Pemesanan gagal, silahkan coba lagi. Jika tetap gagal silahkan hubungi panitia.",
+          });
+          loader.hide();
+        } else {
+          this.$swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", this.$swal.stopTimer);
+              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+            },
+            icon: "success",
+            title: "Pemesanan tiket berhasil",
+          });
+
+          loader.hide();
+
+          this.$router.push({ name: "Ticket Feedback" });
+        }
       }
     },
+  },
+  computed: {
+    ...mapGetters(["ticketInformation", "status", "user"]),
   },
 };
 </script>

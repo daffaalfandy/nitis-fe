@@ -156,19 +156,19 @@
 <script>
 const bundleInformation = [
   {
-    title: "Bundle Tiket Istimewa",
-    desc: "( 1 T-Shirt, 1 Masker, 1 Tiket )",
+    title: "Bundle T-shirt",
+    desc: "( 1 T-Shirt - 1 Tiket )",
     price: "Rp75.000,00",
   },
   {
-    title: "Bundle Tiket Biasa",
-    desc: "( 1 T-Shirt, 1 Tiket )",
-    price: "Rp50.000,00",
+    title: "Bundle Totebag",
+    desc: "( 1 Totebag - 1 Tiket )",
+    price: "Rp55.000,00",
   },
   {
     title: "Hanya Tiket",
     desc: "( 1 Tiket )",
-    price: "Rp25.000,00",
+    price: "Rp15.000,00",
   },
 ];
 
@@ -178,6 +178,7 @@ export default {
     return {
       datepick: "",
       bundleType: 0,
+      bundlePrice: "",
     };
   },
   methods: {
@@ -197,6 +198,8 @@ export default {
     },
     onClickBundle(type, event) {
       this.bundleType = type;
+      this.bundlePrice = bundleInformation[Number(type) - 1].price;
+
       let oldOption = document.querySelector(".ticket-bundle-active");
 
       if (oldOption) {
@@ -239,6 +242,13 @@ export default {
         text: "Fitur dalam tahap pengembangan",
       });
       // handle post to backend
+      this.datepick = this.datepick.split(",");
+      this.$store.commit("setTicketInformation", {
+        movie_date: this.datepick[1].trim(),
+        ticket_bundle: this.bundleType,
+        ticket_price: this.bundlePrice,
+      });
+
       this.$router.push({ name: "Ticket Confirmation" });
     },
   },

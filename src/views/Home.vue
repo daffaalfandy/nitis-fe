@@ -4,21 +4,22 @@
       <header class="container mx-auto">
         <nav class="flex justify-between items-center mx-4">
           <div style="height: 40px">
-            <router-link to="/" tag="a">
+            <a href="/">
               <img
                 src="../assets/img/logo.svg"
                 class="h-full"
                 alt="nitis logo"
               />
-            </router-link>
+            </a>
           </div>
           <!-- START Unauthenticate User -->
-          <ul class="flex items-center text-sm">
+          <ul class="flex items-center text-sm" v-if="!loginStatus">
             <li>
               <router-link
                 to="/login"
                 tag="a"
                 class="px-4 py-2 hover:underline"
+                style="color: #2b2869"
               >
                 Masuk</router-link
               >
@@ -31,7 +32,84 @@
           </ul>
           <!-- END Unauthenticate User -->
           <!-- START Authenticate User -->
+          <div class="relative inline-block text-right" v-if="loginStatus">
+            <div>
+              <button
+                class="dropbtn inline-flex justify-center w-full font-medium text-sm md:text-base focus:outline-none"
+                @click.prevent="dropdownToogle"
+                style="color: #2b2869"
+                id="profile-menu"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                {{ user.fullname }}
+                <svg
+                  class="mt-1.5 ml-2"
+                  width="14"
+                  height="12"
+                  viewBox="0 0 14 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M7 12L0.0717964 0L13.9282 0L7 12Z" fill="#2b2869" />
+                </svg>
+              </button>
+            </div>
 
+            <div
+              class="dropdown-content origin-top-right absolute right-0 mt-2 w-48 rounded-tl-2xl rounded-br-2xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+              id="profile-dropdown"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="profile-menu"
+            >
+              <div class="py-1" role="none">
+                <span
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  >Status Pembayaran:</span
+                >
+                <!-- Confirmed Payment -->
+                <span
+                  class="block px-4 py-2 text-sm font-medium text-green-600"
+                  role="menuitem"
+                  v-if="
+                    user.ticket.is_confirmed === 1 &&
+                    user.ticket.is_submitted === 1
+                  "
+                  >Terkonfirmasi</span
+                >
+                <!-- Unconfirmed Payment -->
+                <span
+                  class="block px-4 py-2 text-sm font-medium text-yellow-400"
+                  role="menuitem"
+                  v-if="
+                    user.ticket.is_confirmed === 0 &&
+                    user.ticket.is_submitted === 1
+                  "
+                  >Belum Terkonfirmasi</span
+                >
+                <!-- Not buying yet -->
+                <span
+                  class="block px-4 py-2 text-sm font-medium text-red-600"
+                  role="menuitem"
+                  v-if="
+                    user.ticket.is_confirmed === 0 &&
+                    user.ticket.is_submitted === 0
+                  "
+                  >Belum Melakukan Pembelian</span
+                >
+              </div>
+              <div class="py-1" role="none">
+                <a
+                  @click.prevent="onLogout"
+                  class="block px-4 py-2 text-sm rounded-br-2xl text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  role="menuitem"
+                  >Keluar</a
+                >
+              </div>
+            </div>
+          </div>
           <!-- END Authenticate User -->
         </nav>
       </header>
@@ -80,7 +158,7 @@
       style="background-image: linear-gradient(#c32e4e, #da622a)"
     >
       <ul
-        class="md:flex text-center justify-center py-3 md:py-6 text-lg text-white"
+        class="md:flex text-center justify-center py-5 md:py-6 text-lg text-white"
         id="main-navbar"
       >
         <router-link
@@ -142,7 +220,7 @@
 
   <footer id="footer" style="background-color: #2b2869">
     <div class="container mx-auto px-10">
-      <div class="grid-cols-3 grid grid-flow-col gap-4">
+      <div class="grid gap-4" id="sponsor-medpart">
         <div class="col-span-2 text-white py-10">
           <span class="py-5"> Disponsori Oleh: </span>
           <div
@@ -170,7 +248,7 @@
             />
           </div>
         </div>
-        <div class="text-white py-10 col-span-1">
+        <div class="text-white py-0 md:py-10 pb-10 md:pb-0 col-span-1">
           <span class="py-5"> Media Partner: </span>
           <div class="grid grid-cols-2 grid-flow-row grid-rows-3 gap-4 py-5">
             <img
@@ -204,8 +282,60 @@
 <script>
 import { defineComponent } from "vue";
 import { FadeInOut } from "vue3-transitions";
+import { mapGetters } from "vuex";
 
 export default defineComponent({
   components: { FadeInOut },
+  methods: {
+    dropdownToogle() {
+      // Dropdown Toggle
+      let dropdown = document.getElementById("profile-dropdown");
+      if (dropdown.classList.contains("hidden")) {
+        dropdown.classList.toggle("block");
+        dropdown.classList.remove("hidden");
+      } else {
+        dropdown.classList.toggle("hidden");
+        dropdown.classList.remove("block");
+      }
+    },
+    onLogout() {
+      this.$cookie.removeCookie("user");
+      this.$cookie.removeCookie("token");
+      window.location.href = "/";
+      this.$store.commit("setLoginStatus", { status: false });
+      this.$store.commit("setUser", { user: {}, token: {} });
+    },
+  },
+  mounted() {
+    window.onclick = function (event) {
+      // Close the dropdown menu if the user clicks outside of it
+      if (
+        !event.target.matches(".dropbtn") &&
+        !event.target.matches(".dropdown-content")
+      ) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        let i;
+        for (i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("block")) {
+            openDropdown.classList.remove("block");
+            openDropdown.classList.toggle("hidden");
+          }
+        }
+      }
+    };
+    if (screen.width >= 768) {
+      document
+        .getElementById("sponsor-medpart")
+        .classList.toggle("grid-cols-3");
+    } else {
+      document
+        .getElementById("sponsor-medpart")
+        .classList.toggle("grid-rows-2");
+    }
+  },
+  computed: {
+    ...mapGetters(["loginStatus", "user"]),
+  },
 });
 </script>

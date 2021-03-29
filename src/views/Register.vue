@@ -35,7 +35,7 @@
               type="text"
               class="form-control"
               id="name"
-              v-model="form.name"
+              v-model="form.fullname"
               required
             />
             <label for="email" class="input-label">Email</label>
@@ -44,7 +44,7 @@
               id="email"
               class="form-control"
               required
-              v-model="form.email"
+              v-model="form.user_email"
             />
             <label for="password" class="input-label">Kata Sandi</label>
             <input
@@ -53,6 +53,10 @@
               class="form-control required"
               v-model="form.password"
             />
+            <span v-if="wrong" class="italic text-sm text-red-500 w-full py-2">
+              Password tidak cocok.
+            </span>
+
             <label for="password_confirm" class="input-label"
               >Konfirmasi Kata Sandi</label
             >
@@ -63,6 +67,9 @@
               required
               v-model="form.password_conf"
             />
+            <span v-if="wrong" class="italic text-sm text-red-500 w-full py-2">
+              Password tidak cocok.
+            </span>
 
             <div class="w-3/5 pt-10">
               <span class="text-white text-xs"
@@ -83,32 +90,59 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Register",
   data() {
     return {
       form: {
-        name: "",
-        email: "",
+        fullname: "",
+        user_email: "",
         password: "",
         password_conf: "",
       },
+      wrong: false,
     };
   },
   methods: {
-    onSubmit() {
-      this.$swal({
-        icon: "error",
-        title: "Oops...",
-        text: "Fitur dalam tahap pengembangan",
-      });
+    async onSubmit() {
       if (this.form.password === this.form.password_conf) {
+        this.wrong = false;
+        let loader = this.useLoading(); // adding page loader
+        loader.show(); // show page loader
         // handle register action
-        console.log("Register");
+        await this.$store.dispatch("register", this.form); // post register
+        if (!this.status) {
+          this.$swal({
+            icon: "error",
+            title: "Oops...",
+            text: this.errors.message,
+          });
+        } else {
+          this.$swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", this.$swal.stopTimer);
+              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+            },
+            icon: "success",
+            title: "Registrasi berhasil, silahkan login untuk melanjutkan.",
+          });
+          this.$router.push({ path: "/login" }); // route to login page
+        }
+        loader.hide(); // hide page loader
       } else {
-        console.log("salah");
+        this.wrong = true;
       }
     },
+  },
+  computed: {
+    ...mapGetters(["errors", "status"]),
   },
 };
 </script>
