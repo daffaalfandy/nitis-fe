@@ -31,51 +31,41 @@
               <div
                 class="md:flex md:space-x-4 space-y-4 md:space-y-0 justify-between"
               >
-                <div class="md:w-1/3 flex space-x-2">
+                <div class="md:w-1/2 flex space-x-2">
                   <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
+                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32 flex content-center"
                     style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
+                  >
+                    <img src="../assets/img/bca-logo.svg" alt="logo bca" class="px-2">
+                  </div>
                   <div class="flex flex-col justify-center">
                     <div
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      037 4384 313 
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n Alifia Gresiana R</div>
                   </div>
                 </div>
-                <div class="md:w-1/3 flex space-x-2">
+                <div class="md:w-1/2 flex space-x-2">
                   <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
+                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32 flex content-center"
                     style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
+                  >
+                    <img src="../assets/img/gopay-logo.svg" alt="logo gopay">
+                  </div>
                   <div class="flex flex-col justify-center">
                     <div
                       class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
                       style="background-color: #2b2869"
                     >
-                      688 6124 XXXX
+                      0877 3825 6964
                     </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
+                    <div class="px-5 text-sm">a/n Alifia Gresiana R</div>
                   </div>
                 </div>
-                <div class="md:w-1/3 flex space-x-2">
-                  <div
-                    class="rounded-tl-2xl flex-initial rounded-br-2xl bg-white w-32 h-32"
-                    style="box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25)"
-                  ></div>
-                  <div class="flex flex-col justify-center">
-                    <div
-                      class="rounded-tl-2xl rounded-br-2xl px-2 py-2 text-center text-sm text-white"
-                      style="background-color: #2b2869"
-                    >
-                      688 6124 XXXX
-                    </div>
-                    <div class="px-5 text-sm">a/n Nitis Creative</div>
-                  </div>
-                </div>
+                
               </div>
             </div>
             <div class="w-full pt-8 md:pt-16">
