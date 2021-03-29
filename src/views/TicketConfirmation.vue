@@ -137,13 +137,26 @@
             class="w-full"
             style="display: contents"
           >
-            <label for="origin" class="input-label">Asal Bank</label>
+            <label class="input-label" for="bank_destination"
+              >Bank Tujuan</label
+            >
+            <select
+              name="bank_destination"
+              id="bank_destination"
+              class="form-control"
+              v-model="form.bank_destination"
+            >
+              <template v-for="bank in bank_destination" :key="bank">
+                <option :value="bank">{{ bank }}</option>
+              </template>
+            </select>
+            <label for="bank_source" class="input-label">Asal Bank</label>
             <input
               type="text"
               class="form-control"
-              id="origin"
-              name="origin"
-              v-model="form.origin"
+              id="bank_source"
+              name="bank_source"
+              v-model="form.bank_source"
             />
             <label for="norek" class="input-label">Nomor Rekening</label>
             <input
@@ -172,21 +185,28 @@
 </template>
 
 <script>
+/* eslint-disable no-unreachable */
+import { mapGetters } from "vuex";
+
+const bankDestination = ["BRI", "OVO"];
+
 export default {
   name: "Ticket Confirmation",
   data() {
     return {
       form: {
-        origin: "",
+        bank_source: "",
         account_number: "",
         name: "",
+        bank_destination: "",
       },
+      bank_destination: bankDestination,
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       if (
-        this.form.origin === "" &&
+        this.form.bank_source === "" &&
         this.form.account_number === "" &&
         this.form.name === ""
       ) {
@@ -197,22 +217,58 @@ export default {
         });
       } else {
         // handle post to backend
-        this.$swal.fire({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener("mouseenter", this.$swal.stopTimer);
-            toast.addEventListener("mouseleave", this.$swal.resumeTimer);
-          },
-          icon: "success",
-          title: "Pemesanan tiket berhasil",
-        });
-        this.$router.push({ name: "Ticket Feedback" });
+        let loader = this.useLoading();
+        loader.show();
+
+        let ticketInformation = {};
+        ticketInformation = this.ticketInformation;
+        ticketInformation.ticket_id = this.user.ticket_id;
+
+        Object.assign(ticketInformation, this.form);
+
+        this.$store.commit("setTicketInformation", ticketInformation);
+        await this.$store.dispatch("updateTicketSubmitted");
+
+        if (!this.status) {
+          this.$swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", this.$swal.stopTimer);
+              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+            },
+            icon: "error",
+            title:
+              "Pemesanan gagal, silahkan coba lagi. Jika tetap gagal silahkan hubungi panitia.",
+          });
+          loader.hide();
+        } else {
+          this.$swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", this.$swal.stopTimer);
+              toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+            },
+            icon: "success",
+            title: "Pemesanan tiket berhasil",
+          });
+
+          loader.hide();
+
+          this.$router.push({ name: "Ticket Feedback" });
+        }
       }
     },
+  },
+  computed: {
+    ...mapGetters(["ticketInformation", "status", "user"]),
   },
 };
 </script>

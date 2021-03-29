@@ -178,6 +178,7 @@ export default {
     return {
       datepick: "",
       bundleType: 0,
+      bundlePrice: "",
     };
   },
   methods: {
@@ -197,6 +198,8 @@ export default {
     },
     onClickBundle(type, event) {
       this.bundleType = type;
+      this.bundlePrice = bundleInformation[Number(type) - 1].price;
+
       let oldOption = document.querySelector(".ticket-bundle-active");
 
       if (oldOption) {
@@ -234,6 +237,13 @@ export default {
     },
     onSubmit() {
       // handle post to backend
+      this.datepick = this.datepick.split(",");
+      this.$store.commit("setTicketInformation", {
+        movie_date: this.datepick[1].trim(),
+        ticket_bundle: this.bundleType,
+        ticket_price: this.bundlePrice,
+      });
+
       this.$router.push({ name: "Ticket Confirmation" });
     },
   },
