@@ -11,16 +11,17 @@
           <div class="pt-10 md:pt-20 w-full px-4 md:px-0 items-center">
             <div class="price-card" id="price-card-1">
               <div
-                class="price-card-left"
+                class="price-card-left place-content-center"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <!-- Image place here -->
+                <img
+                  src="../assets/img/bundle-kaos-min.png"
+                  alt="bundle t-shirt"
+                />
               </div>
               <div class="w-2/3">
-                <h4 class="price-card-title">Bundle Tiket Istimewa</h4>
-                <h5 class="price-card-subtitle">
-                  (1 T-Shirt, 1 Masker, 1 Tiket)
-                </h5>
+                <h4 class="price-card-title">Bundle T-Shirt</h4>
+                <h5 class="price-card-subtitle">(1 T-Shirt - 1 Tiket)</h5>
                 <span class="price-card-price">Rp75.000,00</span>
               </div>
             </div>
@@ -31,12 +32,15 @@
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <!-- Image place here -->
+                <img
+                  src="../assets/img/bundle-totebag-min.png"
+                  alt="bundle totebag"
+                />
               </div>
               <div class="w-2/3">
-                <h4 class="price-card-title">Bundle Tiket Biasa</h4>
-                <h5 class="price-card-subtitle">(1 Masker, 1 Tiket)</h5>
-                <span class="price-card-price">Rp75.000,00</span>
+                <h4 class="price-card-title">Bundle Totebag</h4>
+                <h5 class="price-card-subtitle">(1 Totebag - 1 Tiket)</h5>
+                <span class="price-card-price">Rp55.000,00</span>
               </div>
             </div>
           </div>
@@ -46,12 +50,15 @@
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <!-- Image place here -->
+                <img
+                  src="../assets/img/ticket-only-min.png"
+                  alt="hanya tiket"
+                />
               </div>
               <div class="w-2/3">
                 <h4 class="price-card-title">Hanya Tiket</h4>
                 <h5 class="price-card-subtitle">(1 Tiket)</h5>
-                <span class="price-card-price">Rp75.000,00</span>
+                <span class="price-card-price">Rp15.000,00</span>
               </div>
             </div>
           </div>

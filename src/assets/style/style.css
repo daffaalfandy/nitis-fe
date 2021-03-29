@@ -110,21 +110,21 @@ body {
 }
 
 .bundle-1 {
-  background-image: url("../img/shirt-masker-ticket.svg");
+  background-image: url("../img/bundle-kaos-min.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-2 {
-  background-image: url("../img/shirt-ticket.svg");
+  background-image: url("../img/bundle-totebag-min.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-3 {
-  background-image: url("../img/ticket.svg");
+  background-image: url("../img/ticket-only-min.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

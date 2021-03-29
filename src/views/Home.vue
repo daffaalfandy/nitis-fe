@@ -220,7 +220,7 @@
 
   <footer id="footer" style="background-color: #2b2869">
     <div class="container mx-auto px-10">
-      <div class="grid-cols-3 grid grid-flow-col gap-4">
+      <div class="grid gap-4" id="sponsor-medpart">
         <div class="col-span-2 text-white py-10">
           <span class="py-5"> Disponsori Oleh: </span>
           <div
@@ -248,7 +248,7 @@
             />
           </div>
         </div>
-        <div class="text-white py-10 col-span-1">
+        <div class="text-white py-0 md:py-10 pb-10 md:pb-0 col-span-1">
           <span class="py-5"> Media Partner: </span>
           <div class="grid grid-cols-2 grid-flow-row grid-rows-3 gap-4 py-5">
             <img
@@ -324,6 +324,15 @@ export default defineComponent({
         }
       }
     };
+    if (screen.width >= 768) {
+      document
+        .getElementById("sponsor-medpart")
+        .classList.toggle("grid-cols-3");
+    } else {
+      document
+        .getElementById("sponsor-medpart")
+        .classList.toggle("grid-rows-2");
+    }
   },
   computed: {
     ...mapGetters(["loginStatus", "user"]),
