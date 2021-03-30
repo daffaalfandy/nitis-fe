@@ -2,6 +2,7 @@
   <section id="register">
     <div class="flex flex-row" style="min-height: 100vh">
       <div class="md:flex-initial md:w-2/3 mx-0 px-0 hidden md:block">
+        <div v-if="loading" class="loading"></div>
         <div class="auth-bg w-full h-full pt-10 pl-20">
           <div style="height: 40px">
             <a href="/">
@@ -103,14 +104,14 @@ export default {
         password_conf: "",
       },
       wrong: false,
+      loading: false,
     };
   },
   methods: {
     async onSubmit() {
       if (this.form.password === this.form.password_conf) {
         this.wrong = false;
-        let loader = this.useLoading(); // adding page loader
-        loader.show(); // show page loader
+        this.loading = true;
         // handle register action
         await this.$store.dispatch("register", this.form); // post register
         if (!this.status) {
@@ -119,7 +120,7 @@ export default {
             title: "Oops...",
             text: this.errors.message,
           });
-          loader.hide(); // hide page loader
+          this.loading = false;
         } else {
           this.$swal.fire({
             toast: true,
@@ -134,7 +135,7 @@ export default {
             icon: "success",
             title: "Registrasi berhasil, silahkan login untuk melanjutkan.",
           });
-          loader.hide(); // hide page loader
+          this.loading = false;
           this.$router.push({ path: "/login" }); // route to login page
         }
       } else {
