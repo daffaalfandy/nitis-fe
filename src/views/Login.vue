@@ -2,6 +2,7 @@
   <section id="login">
     <div class="flex flex-row" style="min-height: 100vh">
       <div class="md:flex-initial md:w-2/3 mx-0 px-0 hidden md:block">
+        <div v-if="loading" class="loading"></div>
         <div class="auth-bg w-full h-full pt-10 pl-20">
           <div style="height: 40px">
             <a href="/">
@@ -76,13 +77,13 @@ export default {
         email: "",
         password: "",
       },
+      loading: false,
     };
   },
   methods: {
     async onSubmit() {
+      this.loading = true;
       // Handle login action
-      let loader = this.useLoading(); // adding page loader
-      loader.show(); // show page loader
       await this.$store.dispatch("login", this.form);
 
       if (!this.status) {
@@ -91,6 +92,7 @@ export default {
           title: "Oops...",
           text: this.errors.message,
         });
+        this.loading = false;
       } else {
         if (this.user.user_role === 2) {
           console.log("admin");
@@ -107,9 +109,9 @@ export default {
         this.axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${this.token}`; // set http request header
+        this.loading = false;
         this.$router.push({ path: "/" }); // route back to home
       }
-      loader.hide(); // hide page loader
     },
   },
   computed: {

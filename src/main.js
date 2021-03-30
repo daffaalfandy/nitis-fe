@@ -3,7 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import VueSweetalert2 from "vue-sweetalert2";
-import { useLoading } from "vue3-loading-overlay";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import { VueCookieNext } from "vue-cookie-next";
@@ -15,7 +14,6 @@ import { EXPIRED_COOKIES } from "../env";
 import "@/assets/tailwind.css";
 import "@/assets/style/style.css";
 import "sweetalert2/dist/sweetalert2.min.css";
-import "vue3-loading-overlay/dist/vue3-loading-overlay.css";
 
 VueCookieNext.config({ expire: EXPIRED_COOKIES });
 
@@ -25,11 +23,6 @@ createApp(App)
   .use(VueSweetalert2)
   .use(VueAxios, axios)
   .use(VueCookieNext)
-  .mixin({
-    methods: {
-      useLoading,
-    },
-  })
   .mount("#app");
 
 // authentication
