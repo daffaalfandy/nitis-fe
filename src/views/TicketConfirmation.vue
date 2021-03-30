@@ -3,6 +3,7 @@
     <div class="flex flex-col md:flex-row" style="max-height: 100vh">
       <div class="md:flex-initial mx-0 px-0 bg-white md:w-2/3">
         <div class="w-full pt-5 px-4 md:px-20 h-full" style="max-height: 100%">
+          <div v-if="loading" class="loading"></div>
           <div class="h-1/6" style="height: 40px">
             <a href="/">
               <img src="../assets/img/logo.svg" class="h-full" alt="logo" />
@@ -197,6 +198,7 @@ export default {
         bank_destination: "",
       },
       bank_destination: bankDestination,
+      loading: false,
     };
   },
   methods: {
@@ -213,8 +215,7 @@ export default {
         });
       } else {
         // handle post to backend
-        let loader = this.useLoading();
-        loader.show();
+        this.loading = true;
 
         let ticketInformation = {};
         ticketInformation = this.ticketInformation;
@@ -240,7 +241,7 @@ export default {
             title:
               "Pemesanan gagal, silahkan coba lagi. Jika tetap gagal silahkan hubungi panitia.",
           });
-          loader.hide();
+          this.loading = false;
         } else {
           this.$swal.fire({
             toast: true,
@@ -256,7 +257,7 @@ export default {
             title: "Pemesanan tiket berhasil",
           });
 
-          loader.hide();
+          this.loading = false;
 
           this.$router.push({ name: "Ticket Feedback" });
         }

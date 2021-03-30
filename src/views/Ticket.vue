@@ -236,11 +236,6 @@ export default {
       }
     },
     onSubmit() {
-      this.$swal({
-        icon: "error",
-        title: "Oops...",
-        text: "Fitur dalam tahap pengembangan",
-      });
       // handle post to backend
       this.datepick = this.datepick.split(",");
       this.$store.commit("setTicketInformation", {

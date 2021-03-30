@@ -95,16 +95,6 @@ export default {
 
         this.loading = false;
       } else {
-        if (this.user.user_role === 2) {
-          console.log("admin");
-          this.$cookie.setCookie("user", this.user, {
-            domain: ADMIN_URI,
-          });
-          this.$cookie.setCookie("token", this.token, {
-            domain: ADMIN_URI,
-          });
-          window.location.assign(ADMIN_URI);
-        }
         this.$cookie.setCookie("user", this.user); // set cookies
         this.$cookie.setCookie("token", this.token); // set cookies
         this.axios.defaults.headers.common[
@@ -112,6 +102,10 @@ export default {
         ] = `Bearer ${this.token}`; // set http request header
 
         this.loading = false;
+
+        if (this.user.user_role === 2) {
+          window.location.assign(ADMIN_URI);
+        }
 
         this.$router.push({ path: "/" }); // route back to home
       }
