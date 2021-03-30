@@ -91,6 +91,7 @@ export default {
           title: "Oops...",
           text: this.errors.message,
         });
+        loader.hide(); // hide page loader
       } else {
         if (this.user.user_role === 2) {
           console.log("admin");
@@ -107,9 +108,9 @@ export default {
         this.axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${this.token}`; // set http request header
+        loader.hide(); // hide page loader
         this.$router.push({ path: "/" }); // route back to home
       }
-      loader.hide(); // hide page loader
     },
   },
   computed: {

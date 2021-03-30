@@ -119,6 +119,7 @@ export default {
             title: "Oops...",
             text: this.errors.message,
           });
+          loader.hide(); // hide page loader
         } else {
           this.$swal.fire({
             toast: true,
@@ -133,9 +134,9 @@ export default {
             icon: "success",
             title: "Registrasi berhasil, silahkan login untuk melanjutkan.",
           });
+          loader.hide(); // hide page loader
           this.$router.push({ path: "/login" }); // route to login page
         }
-        loader.hide(); // hide page loader
       } else {
         this.wrong = true;
       }
