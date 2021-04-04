@@ -60,17 +60,31 @@ body {
   max-height: 100%;
   max-width: 100%;
 }
+/* .sinopsis-container {
+  background-image: url("../img/bg-sinopsis.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+} */
 .sinopsis-container {
-  background-image: url("../img/bg-sinopsis.png");
+  background-color: #2b2869;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
-.tc-container {
+/* .tc-container {
   background-image: url("../img/bg-sinopsis.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+} */
+.tc-container {
+  background-color: #2b2869;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
 
 .merchant-section {
@@ -145,4 +159,16 @@ body {
   background-size: cover;
   min-height: 100vh;
   height: auto;
+}
+
+.terms td.number {
+  vertical-align: top;
+}
+
+.olshop-container {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
