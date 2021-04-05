@@ -36,9 +36,19 @@
                 Pembayaran Anda sedang kami proses. Apablia pembayaran Anda
                 belum terkonfirmasi setelah 1x24 jam kerja (Senin - Jumat,
                 08:00-17:00), Anda dapat menghubungi kontak dibawah ini.
+                <br />
+              </span>
+              <span class="w-full">
+                *<strong>
+                  Silahkan logout kemudian login ulang untuk mengecek status
+                  pembayaran.</strong
+                >
               </span>
               <div class="pt-5">
-                <a href="#">
+                <a
+                  href="https://api.whatsapp.com/send?phone=6287738256964&text=Halo%20nitis,%20mau%20tanya-tanya%20nih."
+                  target="_blank"
+                >
                   <button class="btn-auth">
                     <img
                       src="../assets/img/whatsapp-logo.svg"

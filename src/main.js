@@ -17,7 +17,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 VueCookieNext.config({
   expire: EXPIRED_COOKIES,
-  domain: ".nitiscreative.com",
+  // domain: "http://localhost",
   path: "/",
 });
 

@@ -105,7 +105,7 @@
                   @click.prevent="onLogout"
                   class="block px-4 py-2 text-sm rounded-br-2xl text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   role="menuitem"
-                  style="cursor:pointer"
+                  style="cursor: pointer"
                   >Keluar</a
                 >
               </div>
@@ -114,15 +114,16 @@
           <!-- END Authenticate User -->
         </nav>
       </header>
-      <div class="container px-4 md:mx-auto flex-col justify-center center" >
+      <div class="container px-4 md:mx-auto flex-col justify-center center">
         <div class="py-8 px-10 md:px-0 flex justify-center">
           <img src="../assets/img/cantrik-word2.png" alt="cantrik" />
         </div>
         <!-- If its not the right time yet -->
         <div v-if="!movie.canWatch">
           <div class="py-0 md:py-8 px-8 md:px-0 flex justify-center">
-            <h1 class="watch-error-container px-4 py-4 text-white text-center">{{ movie.errMsg }}</h1>
-
+            <h1 class="watch-error-container px-4 py-4 text-white text-center">
+              {{ movie.errMsg }}
+            </h1>
           </div>
         </div>
         <!-- iFrame Movie, set class hidden or up to u if cannot watch movie -->
@@ -136,7 +137,7 @@
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
-              ></iframe>
+            ></iframe>
           </div>
         </div>
       </div>
@@ -191,7 +192,7 @@ export default {
     if (date !== movieDate) {
       this.movie.errMsg = `Cantrik dapat dilihat pada : ${moment(
         movieDate
-      ).format("LLLL")}`;
+      ).format("dddd, DD MMMM YYYY")}`;
     } else {
       this.movie.canWatch = true;
     }
@@ -226,17 +227,13 @@ export default {
       }
     } else {
       this.videoAccess = "none";
-    };
+    }
 
     // Movie Background
     if (screen.width >= 768) {
-      document
-        .getElementById("watch-bg")
-        .classList.toggle("watch-bg");
+      document.getElementById("watch-bg").classList.toggle("watch-bg");
     } else {
-      document
-        .getElementById("watch-bg")
-        .classList.toggle("bg-feedback-right");
+      document.getElementById("watch-bg").classList.toggle("bg-feedback-right");
     }
   },
 };
