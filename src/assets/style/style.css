@@ -16,6 +16,15 @@ body {
   height: 92vh;
   display: block;
 }
+.watch-bg {
+  background-color: #2b2869;
+  background-image: url("../img/bg-watch-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: block;
+}
 .container-date {
   background-image: url("../img/bg-date.svg");
   background-repeat: no-repeat;
@@ -81,6 +90,13 @@ body {
 } */
 .tc-container {
   background-color: #2b2869;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
+}
+.watch-error-container {
+  background-color: #da622a;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -232,6 +248,15 @@ body {
   background-position: center;
   background-size: cover;
   border-radius: 25px 0px 25px 0px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /* Animation */
