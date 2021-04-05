@@ -1,10 +1,10 @@
 "use strict";
 module.exports = {
   APP_NAME: "Nitis",
-  NODE_ENV: "development",
-  SERVER_URI: "http://localhost:3000/api",
-  EXPIRED_COOKIES: "1d",
-  ADMIN_URI: "http://localhost:8081",
+  NODE_ENV: "production",
+  SERVER_URI: "https://www.nitiscreative.com/api",
+  EXPIRED_COOKIES: "3h",
+  ADMIN_URI: "https://www.admin.nitiscreative.com",
   YOUTUBE_ID: "pxcI5g2iUCg",
   TRAILER_YOUTUBE_ID: "U6GtuXd2kdE",
 };

@@ -105,7 +105,7 @@
                   @click.prevent="onLogout"
                   class="block px-4 py-2 text-sm rounded-br-2xl text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   role="menuitem"
-                  style="cursor:pointer"
+                  style="cursor: pointer"
                   >Keluar</a
                 >
               </div>
