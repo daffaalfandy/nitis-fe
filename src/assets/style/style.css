@@ -124,21 +124,21 @@ body {
 }
 
 .bundle-1 {
-  background-image: url("../img/bundle-kaos-min.png");
+  background-image: url("../img/bundle-1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-2 {
-  background-image: url("../img/bundle-totebag-min.png");
+  background-image: url("../img/bundle-2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-3 {
-  background-image: url("../img/ticket-only-min.png");
+  background-image: url("../img/bundle-3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

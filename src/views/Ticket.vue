@@ -128,8 +128,8 @@
                 <img src="../assets/img/img-info.svg" alt="info" />
               </div>
               <div class="flex-1 w-5/6 leading-3 text-sm font-light">
-                Untuk pembelian bundle, kami akan mengirimkan form pemesanan
-                merchandise ke email anda
+                Untuk pembelian bundle, kami akan mengirimkan tiket ke email
+                anda
               </div>
             </div>
             <div class="pt-8 pb-3">
@@ -156,19 +156,19 @@
 <script>
 const bundleInformation = [
   {
-    title: "Bundle T-shirt",
-    desc: "( 1 T-Shirt - 1 Tiket )",
-    price: "Rp75.000,00",
-  },
-  {
-    title: "Bundle Totebag",
-    desc: "( 1 Totebag - 1 Tiket )",
-    price: "Rp55.000,00",
-  },
-  {
-    title: "Hanya Tiket",
+    title: 'Paket Single "Yakali sendiri"',
     desc: "( 1 Tiket )",
     price: "Rp15.000,00",
+  },
+  {
+    title: 'Paket Orang Ketiga "Asik kali ya"',
+    desc: "( <s>Rp45.000,00</s> 3 Tiket  )",
+    price: "Rp40.000,00",
+  },
+  {
+    title: "Paket Ramean Sekampung",
+    desc: "( <s>Rp75.000,00</s> 5 Tiket )",
+    price: "Rp65.000,00",
   },
 ];
 
