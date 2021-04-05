@@ -26,29 +26,15 @@
           class="space-x-1 md:space-x-4 flex justify-center items-center content-center mx-auto text-center pt-5 md:pt-10 px-4 md:px-0"
         >
           <div>
-            <a href="#" target="_blank" class="align-middle">
+            <a
+              href="instagram.com/citrakara.co"
+              target="_blank"
+              class="align-middle"
+            >
               <img
                 src="../assets/img/instagram-logo.svg"
                 alt="instagram-logo"
                 class="h-40 w-auto"
-              />
-            </a>
-          </div>
-          <div>
-            <a href="#" target="_blank" class="align-middle">
-              <img
-                src="../assets/img/shopee-logo.svg"
-                alt="instagram-logo"
-                class="h-40 w-auto"
-              />
-            </a>
-          </div>
-          <div>
-            <a href="#" target="_blank" class="align-middle">
-              <img
-                src="../assets/img/tokopedia-logo.svg"
-                class="h-40 w-auto"
-                alt="instagram-logo"
               />
             </a>
           </div>
