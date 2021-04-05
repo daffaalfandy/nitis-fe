@@ -15,7 +15,11 @@ import "@/assets/tailwind.css";
 import "@/assets/style/style.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 
-VueCookieNext.config({ expire: EXPIRED_COOKIES });
+VueCookieNext.config({
+  expire: EXPIRED_COOKIES,
+  domain: ".nitiscreative.com",
+  path: "/",
+});
 
 createApp(App)
   .use(store)
