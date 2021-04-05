@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { APP_NAME } from "../../env";
 import store from "../store/index";
 import Home from "../views/Home.vue";
+import WatchMovie from "../views/WatchMovie";
 
 // home section
 import HomeSinopsis from "../components/HomeSinopsis";
@@ -61,6 +62,23 @@ const routes = [
         meta: { title: `${DEFAULT_TITLE} | Tentang Kami` },
       },
     ],
+  },
+  {
+    path: "/watch",
+    name: "Watch",
+    component: WatchMovie,
+    meta: { title: `${DEFAULT_TITLE} | Cantrik` },
+    beforeEnter: (to, from, next) => {
+      if (store.getters.loginStatus === false) next({ path: "/login" });
+      else {
+        if (
+          store.getters.user.ticket.is_confirmed === 1 &&
+          store.getters.user.ticket.is_submitted === 1
+        ) {
+          next();
+        } else next({ path: "/" });
+      }
+    },
   },
   {
     path: "/login",

@@ -124,9 +124,22 @@
             <div class="py-8">
               <img src="../assets/img/cantrik-word.png" alt="cantrik" />
             </div>
-            <div class="pt-2">
+            <!-- If not logged in / not buying yet -->
+            <div v-if="videoAccess === 'none'" class="pt-2">
               <router-link to="/ticket" tag="a" class="btn-secondary"
                 >Beli Tiket</router-link
+              >
+            </div>
+            <!-- If submitted -->
+            <div v-if="videoAccess === 'submitted'" class="pt-2">
+              <button class="btn-secondary" disabled>
+                Menunggu Konfirmasi
+              </button>
+            </div>
+            <!-- If confirmed -->
+            <div v-if="videoAccess === 'confirmed'" class="pt-2">
+              <router-link to="/watch" tag="a" class="btn-secondary"
+                >Lihat Film</router-link
               >
             </div>
           </div>
@@ -434,6 +447,7 @@ export default defineComponent({
   data() {
     return {
       trailerLink: `https://youtube.com/embed/${TRAILER_YOUTUBE_ID}?modestbranding=1&autohide=1&showinfo=0&controls=1`,
+      videoAccess: "none",
     };
   },
   components: { FadeInOut },
@@ -475,6 +489,21 @@ export default defineComponent({
         }
       }
     };
+    if (this.loginStatus) {
+      if (
+        this.user.ticket.is_submitted === 1 &&
+        this.user.ticket.is_confirmed === 1
+      ) {
+        this.videoAccess = "confirmed";
+      } else if (this.user.ticket.is_submitted === 1) {
+        this.videoAccess = "submitted";
+      } else {
+        this.videoAccess = "none";
+      }
+    } else {
+      this.videoAccess = "none";
+    }
+    // Footer style
     if (screen.width >= 768) {
       document
         .getElementById("sponsor-medpart")
