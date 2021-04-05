@@ -65,7 +65,9 @@
         </div>
         <div class="items-center pb-10 pt-5">
           <div class="text-center">
-            <a href="#" target="_blank" class="btn-secondary"> Beli Tiket </a>
+            <router-link to="/ticket" tag="a" class="btn-secondary">
+              Beli Tiket
+            </router-link>
           </div>
         </div>
       </div>

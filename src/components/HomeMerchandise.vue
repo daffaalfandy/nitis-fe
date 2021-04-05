@@ -10,11 +10,9 @@
         <div
           class="grid grid-cols-1 md:grid-cols-3 pt-10 md:pt-40 px-10 md:px-32 place-items-center"
         >
-          <img src="../assets/img/merchant-collection.png" alt="merchant" />
-          <img src="../assets/img/merchant-collection.png" alt="merchant" />
-          <img src="../assets/img/merchant-collection.png" alt="merchant" />
-          <img src="../assets/img/merchant-collection.png" alt="merchant" />
-          <img src="../assets/img/merchant-collection.png" alt="merchant" />
+          <img src="../assets/img/merch-1-min.png" alt="merchant" />
+          <img src="../assets/img/merch-2-min.png" alt="merchant" />
+          <img src="../assets/img/merch-3-min.png" alt="merchant" />
         </div>
       </div>
       <div class="pt-0 md:pt-80 w-full items-center block">
@@ -27,7 +25,7 @@
         >
           <div>
             <a
-              href="instagram.com/citrakara.co"
+              href="https://www.instagram.com/citrakara.co"
               target="_blank"
               class="align-middle"
             >

@@ -6,4 +6,5 @@ module.exports = {
   EXPIRED_COOKIES: "1d",
   YOUTUBE_ID: "",
   ADMIN_URI: "http://localhost:8081",
+  TRAILER_YOUTUBE_ID: "U6GtuXd2kdE",
 };
