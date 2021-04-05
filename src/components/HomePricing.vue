@@ -14,15 +14,12 @@
                 class="price-card-left place-content-center"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <img
-                  src="../assets/img/bundle-kaos-min.png"
-                  alt="bundle t-shirt"
-                />
+                <img src="../assets/img/bundle-1.png" alt="bundle t-shirt" />
               </div>
               <div class="w-2/3">
-                <h4 class="price-card-title">Bundle T-Shirt</h4>
-                <h5 class="price-card-subtitle">(1 T-Shirt - 1 Tiket)</h5>
-                <span class="price-card-price">Rp75.000,00</span>
+                <h4 class="price-card-title">Paket Single "Yakali sendiri"</h4>
+                <h5 class="price-card-subtitle">(1 Tiket)</h5>
+                <span class="price-card-price">Rp15.000,00</span>
               </div>
             </div>
           </div>
@@ -32,15 +29,14 @@
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <img
-                  src="../assets/img/bundle-totebag-min.png"
-                  alt="bundle totebag"
-                />
+                <img src="../assets/img/bundle-2.png" alt="bundle totebag" />
               </div>
               <div class="w-2/3">
-                <h4 class="price-card-title">Bundle Totebag</h4>
-                <h5 class="price-card-subtitle">(1 Totebag - 1 Tiket)</h5>
-                <span class="price-card-price">Rp55.000,00</span>
+                <h4 class="price-card-title">Orang Ketiga "Asik kali ya"</h4>
+                <h5 class="price-card-subtitle">(3 Tiket)</h5>
+                <span class="price-card-price"
+                  ><s>Rp45.000,00</s> Rp40.000,00</span
+                >
               </div>
             </div>
           </div>
@@ -50,15 +46,14 @@
                 class="price-card-left"
                 style="background-image: linear-gradient(#da622a, #c32e4e)"
               >
-                <img
-                  src="../assets/img/ticket-only-min.png"
-                  alt="hanya tiket"
-                />
+                <img src="../assets/img/bundle-3.png" alt="hanya tiket" />
               </div>
               <div class="w-2/3">
-                <h4 class="price-card-title">Hanya Tiket</h4>
-                <h5 class="price-card-subtitle">(1 Tiket)</h5>
-                <span class="price-card-price">Rp15.000,00</span>
+                <h4 class="price-card-title">Paket Ramean Sekampung</h4>
+                <h5 class="price-card-subtitle">(5 Tiket)</h5>
+                <span class="price-card-price"
+                  ><s>Rp75.000,00</s> Rp65.000,00</span
+                >
               </div>
             </div>
           </div>
