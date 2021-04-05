@@ -1,6 +1,6 @@
 <template>
   <section id="watch">
-    <div class="watch-bg pt-5">
+    <div class="pt-5" id="watch-bg">
       <header class="container mx-auto">
         <nav class="flex justify-between items-center mx-4">
           <div style="height: 40px">
@@ -226,6 +226,17 @@ export default {
       }
     } else {
       this.videoAccess = "none";
+    };
+
+    // Movie Background
+    if (screen.width >= 768) {
+      document
+        .getElementById("watch-bg")
+        .classList.toggle("watch-bg");
+    } else {
+      document
+        .getElementById("watch-bg")
+        .classList.toggle("bg-feedback-right");
     }
   },
 };
