@@ -124,9 +124,22 @@
             <div class="py-8">
               <img src="../assets/img/cantrik-word.png" alt="cantrik" />
             </div>
-            <div class="pt-2">
+            <!-- If not logged in / not buying yet -->
+            <div v-if="videoAccess === 'none'" class="pt-2">
               <router-link to="/ticket" tag="a" class="btn-secondary"
                 >Beli Tiket</router-link
+              >
+            </div>
+            <!-- If submitted -->
+            <div v-if="videoAccess === 'submitted'" class="pt-2">
+              <button class="btn-secondary" disabled>
+                Menunggu Konfirmasi
+              </button>
+            </div>
+            <!-- If confirmed -->
+            <div v-if="videoAccess === 'confirmed'" class="pt-2">
+              <router-link to="/watch" tag="a" class="btn-secondary"
+                >Lihat Film</router-link
               >
             </div>
           </div>
@@ -140,7 +153,7 @@
               <div class="relative" style="padding-top: 56.25%">
                 <iframe
                   class="absolute inset-0 pl-10 md:pl-18 pr-14 md:pr-16 pb-10 pt-2 md:pt-4 w-full h-full"
-                  src="https://youtube.com/embed/SMKPKGW083c?modestbranding=1&autohide=1&showinfo=0&controls=1"
+                  :src="trailerLink"
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
@@ -224,25 +237,45 @@
         <div class="col-span-2 text-white py-10">
           <span class="py-5"> Disponsori Oleh: </span>
           <div
-            class="grid grid-cols-3 grid-rows-3 grid-flow-row gap-3 pr-20 py-5"
+            class="grid grid-cols-5 grid-rows-2 grid-flow-row gap-3 pr-20 py-5"
           >
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/sponsor/lensa-jogja-min.png"
               alt="medpart"
               class="w-full"
             />
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/sponsor/logo-amoeba-min.png"
               alt="medpart"
               class="w-full"
             />
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/sponsor/logop-min.png"
               alt="medpart"
               class="w-full"
             />
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/sponsor/logotype-putih-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/sponsor/SCI-RED-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/sponsor/titik-fokus-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/sponsor/wisanggenii-1-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/sponsor/WKEYANG-min.png"
               alt="medpart"
               class="w-full"
             />
@@ -250,19 +283,144 @@
         </div>
         <div class="text-white py-0 md:py-10 pb-10 md:pb-0 col-span-1">
           <span class="py-5"> Media Partner: </span>
-          <div class="grid grid-cols-2 grid-flow-row grid-rows-3 gap-4 py-5">
+          <div class="grid grid-cols-5 grid-flow-row grid-rows-5 gap-4 py-5">
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/medpart/aditv-min.png"
               alt="medpart"
               class="w-full"
             />
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/medpart/ajr.png"
               alt="medpart"
               class="w-full"
             />
             <img
-              src="https://picsum.photos/200/150"
+              src="../assets/img/medpart/area-jogja-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/crast-png-1-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/dista-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/Event-Boyolali-Black-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/grace-art-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/gudegnet-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/halo-jogjakarta-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/istakalisa.jpg"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/jitv-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/jogja-family-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/jogja-headline-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/jogja-seni-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/jogjapunyaacara-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/magenta-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/medpart-2-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/medpart-3-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/medpart-4-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/medpart-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/mmtc-min.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/motau.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/poster-seni.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/pyy.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/rbtv.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/semarang-panjang.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/seputar-pensi.png"
+              alt="medpart"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/medpart/swaragama.jpg"
               alt="medpart"
               class="w-full"
             />
@@ -283,8 +441,15 @@
 import { defineComponent } from "vue";
 import { FadeInOut } from "vue3-transitions";
 import { mapGetters } from "vuex";
+import { TRAILER_YOUTUBE_ID } from "../../env";
 
 export default defineComponent({
+  data() {
+    return {
+      trailerLink: `https://youtube.com/embed/${TRAILER_YOUTUBE_ID}?modestbranding=1&autohide=1&showinfo=0&controls=1`,
+      videoAccess: "none",
+    };
+  },
   components: { FadeInOut },
   methods: {
     dropdownToogle() {
@@ -324,6 +489,21 @@ export default defineComponent({
         }
       }
     };
+    if (this.loginStatus) {
+      if (
+        this.user.ticket.is_submitted === 1 &&
+        this.user.ticket.is_confirmed === 1
+      ) {
+        this.videoAccess = "confirmed";
+      } else if (this.user.ticket.is_submitted === 1) {
+        this.videoAccess = "submitted";
+      } else {
+        this.videoAccess = "none";
+      }
+    } else {
+      this.videoAccess = "none";
+    }
+    // Footer style
     if (screen.width >= 768) {
       document
         .getElementById("sponsor-medpart")

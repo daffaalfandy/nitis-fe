@@ -6,7 +6,7 @@
           <img src="../assets/img/sinopsis-1.png" alt="sinopsis pict" />
         </div>
         <div class="flex-1 align-middle mx-4 md:mx-0">
-          <div class="h-full pt-10 md:pt-44">
+          <div class="h-full pt-10 md:pt-44 pb-10">
             <h1
               class="section-title text-xl md:text-6xl tracking-wider"
               style="text-align: start !important; padding-top: 0px !important"
@@ -14,26 +14,31 @@
               Sinopsis
             </h1>
             <div
-              class="sinopsis-container pt-8 pb-14 pl-8 md:pl-12 pr-8 md:pr-20 text-white text-justify"
+              class="sinopsis-container mt-8 py-8 px-8 text-white text-justify"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. A in
-              sodales enim, massa vitae. Nunc, ipsum, id sit donec tincidunt
-              bibendum suspendisse. Scelerisque dignissim sodales egestas
-              elementum hendrerit scelerisque mi. Non, aenean mi nulla neque
-              elementum lorem orci sodales. Aenean enim, ligula nunc tellus
-              facilisi sit. A vitae eget penatibus senectus ut cursus. Mattis
-              sed semper magna nullam. Interdum porttitor aliquam, massa morbi.
-              Volutpat risus sed phasellus eu, ultricies. Cursus nisl volutpat
-              sed quam congue egestas consequat dictum. Magna auctor duis diam
-              convallis porta amet iaculis commodo velit. Mauris fringilla
-              mauris non tempus velit id vulputate nec cras. Posuere dignissim
-              ut facilisis ridiculus pretium sollicitudin. At vitae malesuada
-              porta cras blandit mattis. Tincidunt eget amet luctus neque. Sed
-              dictum sed ultricies nisl. Urna proin neque, ullamcorper ultrices
-              arcu, eleifend vestibulum aliquet enim. Nisl, porttitor eget
-              placerat cum. Erat id dui, ligula ipsum pellentesque. Enim non id
-              ridiculus velit integer. Risus dignissim ut ut dictum libero arcu
-              sociis justo, aliquam.
+              <b>“Cantrik”</b> menceritakan tentang sembilan orang
+              <i>cantrik</i> (murid) yang tergabung dalam suatu kelas.
+              Kesembilan murid tersebut adalah Andi (Zunan), Giyanto (Anang),
+              Kupita (Gayar), Sadama (Ganggas), Icuk (Rehan), Gecul (Cahyo),
+              Putra (Lintang), Bagus (Fikri), dan Jalu (Beno). Berlatar di
+              sebuah padepokan, Andi dengan sosoknya yang lugu menyimpan
+              pemikiran-pemikiran yang kritis. Alih-alih mendukung potensi Andi,
+              lingkungan sekitar, termasuk teman dan keluarga, justru menyoroti
+              hal tersebut sebagai karakter yang ‘menganggu’ juga ‘menyebalkan’.
+              Pemikirannya yang berbeda acap kali dianggap <i>nyeleneh</i>.
+              <br />
+              <br />
+              Pengaruh kuat dari lingkungan sekitar memaksa Andi untuk selalu
+              menimbang segala pikiran dan tindakannya. Kebimbangan yang
+              kemudian membawa Andi pada dua pilihan: tunduk untuk menjadi sama
+              atau berpegang pada yang benar walau berbeda?
+              <br />
+              <br />
+              Sebuah film pendek yang banyak mengkolaborasikan musik dan tari
+              dalam penyampaian adegan, tanpa meninggalkan sisi realis seperti
+              penggunaan properti, latar adegan nyata, dan dialog verbal.
+              <b>“Cantrik”</b> hadir menampilkan banyak gagasan yang disampaikan
+              melalui bentuk simbolik.
             </div>
             <img
               src="../assets/img/sinopsis-2.png"

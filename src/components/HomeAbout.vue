@@ -53,20 +53,15 @@
           <h3 class="justify-center align-middle">Ikuti media sosial kami:</h3>
         </div>
         <div>
-          <a href="#" target="_blank" class="align-middle">
+          <a
+            href="https://www.instagram.com/nitis.creative/"
+            target="_blank"
+            class="align-middle"
+          >
             <img
               src="../assets/img/instagram-logo.svg"
               alt="instagram-logo"
               class="h-20 w-auto"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="#" target="_blank" class="align-middle">
-            <img
-              src="../assets/img/youtube-logo.svg"
-              class="h-20 w-auto"
-              alt="instagram-logo"
             />
           </a>
         </div>

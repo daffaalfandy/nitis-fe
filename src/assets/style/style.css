@@ -60,17 +60,31 @@ body {
   max-height: 100%;
   max-width: 100%;
 }
+/* .sinopsis-container {
+  background-image: url("../img/bg-sinopsis.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+} */
 .sinopsis-container {
-  background-image: url("../img/bg-sinopsis.png");
+  background-color: #2b2869;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
-.tc-container {
+/* .tc-container {
   background-image: url("../img/bg-sinopsis.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+} */
+.tc-container {
+  background-color: #2b2869;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
 
 .merchant-section {
@@ -110,21 +124,21 @@ body {
 }
 
 .bundle-1 {
-  background-image: url("../img/bundle-kaos-min.png");
+  background-image: url("../img/bundle-1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-2 {
-  background-image: url("../img/bundle-totebag-min.png");
+  background-image: url("../img/bundle-2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .bundle-3 {
-  background-image: url("../img/ticket-only-min.png");
+  background-image: url("../img/bundle-3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -206,6 +220,18 @@ body {
     rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0,
     rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0,
     rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+.terms td.number {
+  vertical-align: top;
+}
+
+.olshop-container {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
 }
 
 /* Animation */
