@@ -26,10 +26,24 @@
         >
           <div class="w-full">
             <h3 class="auth-title">Terima Kasih</h3>
-            <div class="w-2/3 pt-2 pb-10">
+            <div class="w-2/3 pt-2">
               <hr style="border-top: 4px solid #da622a" />
             </div>
           </div>
+
+          <!-- START: INVOICE -->
+          <div
+            class="w-full my-5 rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm"
+          >
+            <p>Pembayaran melalui:</p>
+            <p><b>BCA - 037 4384 313 a/n Alifia Gresiana R</b></p>
+            <p>Nominal yang dibayarkan:</p>
+            <p><b>Rp15.000,00</b></p>
+            <p>Dibayar melalui:</p>
+            <p><b>BNI - 037 4384 313 a/n Tatang Suratang</b></p>
+          </div>
+          <!-- END: INVOICE -->
+
           <div class="w-full">
             <div class="rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm">
               <span class="w-full">
