@@ -37,7 +37,7 @@
             style="background-color: #2b2869"
           >
             <h3 class="justify-center align-middle">
-              Ikuti media sosial kami:
+              Hubungi media sosial kami:
             </h3>
           </div>
         </div>
@@ -50,20 +50,35 @@
           class="text-white p-5 rounded-tl-2xl rounded-br-2xl hidden md:block"
           style="background-color: #2b2869"
         >
-          <h3 class="justify-center align-middle">Ikuti media sosial kami:</h3>
+          <h3 class="justify-center align-middle">Hubungi media sosial kami:</h3>
         </div>
-        <div>
-          <a
-            href="https://www.instagram.com/nitis.creative/"
-            target="_blank"
-            class="align-middle"
-          >
-            <img
-              src="../assets/img/instagram-logo.svg"
-              alt="instagram-logo"
-              class="h-20 w-auto"
-            />
-          </a>
+        <div class="space-x-1 md:space-x-4 flex justify-center items-center content-center">
+          <div>
+            <a
+              href="https://www.instagram.com/nitis.creative/"
+              target="_blank"
+              class="align-middle"
+            >
+              <img
+                src="../assets/img/instagram-logo.svg"
+                alt="instagram-logo"
+                class="h-20 w-auto"
+              />
+            </a>
+          </div>
+          <div class="olshop-container">
+            <a
+              href="https://api.whatsapp.com/send?phone=6287738256964"
+              target="_blank"
+              class="align-middle"
+            >
+              <img
+                src="../assets/img/whatsapp-logo-contact.svg"
+                alt="whatsapp-logo"
+                class="h-20 w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

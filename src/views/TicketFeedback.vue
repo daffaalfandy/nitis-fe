@@ -33,7 +33,7 @@
           <div class="w-full">
             <div class="rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm">
               <span class="w-full">
-                Pembayaran Anda sedang kami proses. Apablia pembayaran Anda
+                Apablia pembayaran Anda
                 belum terkonfirmasi setelah 1x24 jam kerja (Senin - Jumat,
                 08:00-17:00), Anda dapat menghubungi kontak dibawah ini.
                 <br />
