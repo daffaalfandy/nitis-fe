@@ -32,22 +32,42 @@
           </div>
 
           <!-- START: INVOICE -->
-          <div class="w-full my-5 rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm">
+          <div
+            class="w-full my-5 rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm"
+          >
             <p>Pembayaran melalui:</p>
-            <p><b>BCA - 037 4384 313 a/n Alifia Gresiana R</b></p>
+            <p>
+              <b
+                >{{ ticketInformation.bank_destination_information.bank }} -
+                {{
+                  ticketInformation.bank_destination_information.account_number
+                }}
+                {{
+                  ticketInformation.bank_destination_information.account_name
+                }}</b
+              >
+            </p>
             <p>Nominal yang dibayarkan:</p>
-            <p><b>Rp15.000,00</b></p>
+            <p>
+              <b>{{ ticketInformation.ticket_price }}</b>
+            </p>
             <p>Dibayar melalui:</p>
-            <p><b>BNI - 037 4384 313 a/n Tatang Suratang</b></p>
+            <p>
+              <b
+                >{{ ticketInformation.bank_source }} -
+                {{ ticketInformation.account_number }}
+                {{ ticketInformation.name }}</b
+              >
+            </p>
           </div>
           <!-- END: INVOICE -->
 
           <div class="w-full">
             <div class="rounded-tl-2xl rounded-br-2xl bg-white p-5 text-sm">
               <span class="w-full">
-                Apablia pembayaran Anda belum
-                terkonfirmasi setelah 1x24 jam kerja (Senin - Jumat,
-                08:00-17:00), Anda dapat menghubungi kontak dibawah ini.
+                Apablia pembayaran Anda belum terkonfirmasi setelah 1x24 jam
+                kerja (Senin - Jumat, 08:00-17:00), Anda dapat menghubungi
+                kontak dibawah ini.
                 <br />
               </span>
               <span class="w-full">
@@ -84,3 +104,13 @@
     </div>
   </section>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["ticketInformation"]),
+  },
+};
+</script>
