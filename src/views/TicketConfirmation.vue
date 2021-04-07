@@ -187,6 +187,19 @@ import { mapGetters } from "vuex";
 
 const bankDestination = ["BCA", "Gopay"];
 
+const bankInformation = [
+  {
+    bank: "BCA",
+    account_number: "037 4384 313",
+    account_name: "a/n Alifia Gresiana R",
+  },
+  {
+    bank: "Gopay",
+    account_number: "0877 3825 6964",
+    account_name: "a/n Alifia Gresiana R",
+  },
+];
+
 export default {
   name: "Ticket Confirmation",
   data() {
@@ -220,6 +233,12 @@ export default {
         let ticketInformation = {};
         ticketInformation = this.ticketInformation;
         ticketInformation.ticket_id = this.user.ticket_id;
+
+        if (this.form.bank_destination === "BCA") {
+          ticketInformation.bank_destination_information = bankInformation[0];
+        } else if (this.form.bank_destination === "Gopay") {
+          ticketInformation.bank_destination_information = bankInformation[1];
+        }
 
         Object.assign(ticketInformation, this.form);
 
