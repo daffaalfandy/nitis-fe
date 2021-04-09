@@ -105,7 +105,7 @@
                   @click.prevent="onLogout"
                   class="block px-4 py-2 text-sm rounded-br-2xl text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   role="menuitem"
-                  style="cursor:pointer"
+                  style="cursor: pointer"
                   >Keluar</a
                 >
               </div>
@@ -314,7 +314,9 @@
               />
             </div>
           </div>
-          <div class="grid grid-cols-8 grid-flow-row grid-rows-auto gap-4 items-center">
+          <div
+            class="grid grid-cols-8 grid-flow-row grid-rows-auto gap-4 items-center"
+          >
             <img
               src="../assets/img/sponsor/logotype-putih-min.png"
               alt="sponsor"
@@ -354,7 +356,7 @@
         </div>
         <div class="text-white py-0 md:py-10 pb-10 md:pb-0 col-span-1">
           <span class="py-5"> Media Partner: </span>
-          <div class="grid grid-cols-5 grid-flow-row grid-rows-5 gap-4 py-5 items-center">
+          <div class="grid grid-cols-4 grid-flow-row gap-2 py-5 items-center">
             <img
               src="../assets/img/medpart/aditv-min.png"
               alt="medpart"
@@ -363,137 +365,137 @@
             <img
               src="../assets/img/medpart/ajr.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/area-jogja-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/crast-png-1-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/dista-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/Event-Boyolali-Black-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/grace-art-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/gudegnet-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/halo-jogjakarta-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/istakalisa.jpg"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/jitv-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/jogja-family-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/jogja-headline-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/jogja-seni-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/jogjapunyaacara-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/magenta-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/medpart-2-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/medpart-3-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/medpart-4-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/medpart-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/mmtc-min.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/motau.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/poster-seni.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/pyy.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/rbtv.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/semarang-panjang.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/seputar-pensi.png"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
             <img
               src="../assets/img/medpart/swaragama.jpg"
               alt="medpart"
-              class="w-full"
+              class="w-2/3"
             />
           </div>
         </div>
