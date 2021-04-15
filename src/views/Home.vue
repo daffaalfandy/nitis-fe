@@ -235,52 +235,8 @@
   <footer id="footer" style="background-color: #2b2869">
     <div class="container mx-auto px-10">
       <div class="grid gap-4" id="sponsor-medpart">
-        <div class="col-span-2 text-white py-10">
+        <div class="col-span-2 text-white py-10 pr-4">
           <span class="py-5"> Disponsori Oleh: </span>
-          <!-- <div
-            class="grid grid-cols-5 grid-rows-2 grid-flow-row gap-3 pr-20 py-5"
-          >
-            <img
-              src="../assets/img/sponsor/lensa-jogja-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/logo-amoeba-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/logop-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/logotype-putih-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/SCI-RED-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/titik-fokus-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/wisanggenii-1-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-            <img
-              src="../assets/img/sponsor/WKEYANG-min.png"
-              alt="medpart"
-              class="w-full"
-            />
-          </div> -->
           <div class="flex">
             <div class="w-6/12 py-5">
               <img
@@ -323,12 +279,22 @@
               class="w-full"
             />
             <img
+              src="../assets/img/sponsor/logo-cieriek-min.png"
+              alt="sponsor"
+              class="w-full"
+            />
+            <img
               src="../assets/img/sponsor/logo-cokro-min.png"
               alt="sponsor"
               class="w-full"
             />
             <img
               src="../assets/img/sponsor/logo-donqui-min.png"
+              alt="sponsor"
+              class="w-full"
+            />
+            <img
+              src="../assets/img/sponsor/logo-emina-min.png"
               alt="sponsor"
               class="w-full"
             />
@@ -356,12 +322,16 @@
         </div>
         <div class="text-white py-0 md:py-10 pb-10 md:pb-0 col-span-1">
           <span class="py-5"> Media Partner: </span>
+          <div class="flex">
+            <div class="w-2/5">
+              <img
+                src="../assets/img/medpart/aditv-min.png"
+                alt="medpart"
+                class="w-full"
+              />
+            </div>
+          </div>
           <div class="grid grid-cols-4 grid-flow-row gap-2 py-5 items-center">
-            <img
-              src="../assets/img/medpart/aditv-min.png"
-              alt="medpart"
-              class="w-full"
-            />
             <img
               src="../assets/img/medpart/ajr.png"
               alt="medpart"
@@ -383,7 +353,7 @@
               class="w-2/3"
             />
             <img
-              src="../assets/img/medpart/Event-Boyolali-Black-min.png"
+              src="../assets/img/medpart/Event-Boyolali-White-min.png"
               alt="medpart"
               class="w-2/3"
             />
@@ -473,7 +443,7 @@
               class="w-2/3"
             />
             <img
-              src="../assets/img/medpart/pyy.png"
+              src="../assets/img/medpart/pyy-min.png"
               alt="medpart"
               class="w-2/3"
             />
@@ -494,6 +464,46 @@
             />
             <img
               src="../assets/img/medpart/swaragama.jpg"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/ilkom-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/patriot-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/pazel-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/pensiunan-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/p-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/rapma-fm-min.png"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/event-jogjaku-min.jpg"
+              alt="medpart"
+              class="w-2/3"
+            />
+            <img
+              src="../assets/img/medpart/iradio.png"
               alt="medpart"
               class="w-2/3"
             />
