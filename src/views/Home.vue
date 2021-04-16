@@ -274,7 +274,7 @@
             class="grid grid-cols-8 grid-flow-row grid-rows-auto gap-4 items-center"
           >
             <img
-              src="../assets/img/sponsor/logotype-putih-min.png"
+              src="../assets/img/sponsor/akuifer-min.png"
               alt="sponsor"
               class="w-full"
             />
