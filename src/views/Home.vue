@@ -308,6 +308,7 @@
               alt="sponsor"
               class="w-full"
             />
+            <div></div>
             <img
               src="../assets/img/sponsor/Tsudzuku.png"
               alt="sponsor"
