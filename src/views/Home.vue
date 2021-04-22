@@ -257,17 +257,17 @@
             <img
               src="../assets/img/sponsor/WKEYANG-min.png"
               alt="sponsor"
-              class="w-full pt-5"
+              class="w-full"
             />
             <img
               src="../assets/img/sponsor/titik-fokus-min.png"
               alt="sponsor"
-              class="w-full pt-5"
+              class="w-full"
             />
             <img
               src="../assets/img/sponsor/lensa-jogja-min.png"
               alt="sponsor"
-              class="w-full pt-5"
+              class="w-full"
             />
 
           </div>
