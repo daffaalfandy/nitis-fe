@@ -251,24 +251,25 @@
                 alt="sponsor"
                 class="w-full"
               />
-              <img
-                src="../assets/img/sponsor/WKEYANG-min.png"
-                alt="sponsor"
-                class="w-full pt-5"
-              />
             </div>
-            <div class="w-2/12 py-5 pl-5">
-              <img
-                src="../assets/img/sponsor/lensa-jogja-min.png"
-                alt="sponsor"
-                class="w-full pt-5"
-              />
-              <img
-                src="../assets/img/sponsor/titik-fokus-min.png"
-                alt="sponsor"
-                class="w-full pt-5"
-              />
-            </div>
+          </div>
+          <div class="grid grid-cols-5 grid-flow-row grid-rows-auto gap-4 items-center pb-5">
+            <img
+              src="../assets/img/sponsor/WKEYANG-min.png"
+              alt="sponsor"
+              class="w-full pt-5"
+            />
+            <img
+              src="../assets/img/sponsor/titik-fokus-min.png"
+              alt="sponsor"
+              class="w-full pt-5"
+            />
+            <img
+              src="../assets/img/sponsor/lensa-jogja-min.png"
+              alt="sponsor"
+              class="w-full pt-5"
+            />
+
           </div>
           <div
             class="grid grid-cols-8 grid-flow-row grid-rows-auto gap-4 items-center"
