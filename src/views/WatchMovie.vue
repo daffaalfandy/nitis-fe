@@ -139,8 +139,14 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="text-center p-5 text-white">
+          <div class="text-center p-3 md:p-5 text-white text-xs md:text-base">
             <p>Catatan : Gunakan headphone untuk pengalaman menonton yang lebih baik.</p>
+          </div>
+          <div class="mx-4 md:mx-80">
+            <hr class="" />
+          </div>
+          <div class="text-center p-3 md:p-5 text-white text-sm md:text-base">
+            <p>Ikuti survey kami, <u><a href="http://bit.ly/DataPublikFilmCantrik" target="_blank">di sini</a></u>.</p>
           </div>
         </div>
       </div>
