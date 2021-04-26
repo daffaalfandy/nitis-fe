@@ -139,6 +139,9 @@
               allowfullscreen
             ></iframe>
           </div>
+          <div class="text-center p-5 text-white">
+            <p>Catatan : Gunakan headphone untuk pengalaman menonton yang lebih baik.</p>
+          </div>
         </div>
       </div>
     </div>
