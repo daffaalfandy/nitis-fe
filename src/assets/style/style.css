@@ -177,6 +177,15 @@ body {
   height: auto;
 }
 
+.ty-container {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  border-radius: 25px 0px 25px 0px;
+  color: #2b2869;
+}
+
 /* Absolute Center Spinner */
 .loading {
   position: fixed;

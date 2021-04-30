@@ -126,22 +126,27 @@
               <img src="../assets/img/cantrik-word.png" alt="cantrik" />
             </div>
             <!-- If not logged in / not buying yet -->
-            <div v-if="videoAccess === 'none'" class="pt-2">
+            <!-- <div v-if="videoAccess === 'none'" class="pt-2">
               <router-link to="/ticket" tag="a" class="btn-secondary"
                 >Beli Tiket</router-link
               >
-            </div>
+            </div> -->
             <!-- If submitted -->
-            <div v-if="videoAccess === 'submitted'" class="pt-2">
+            <!-- <div v-if="videoAccess === 'submitted'" class="pt-2">
               <button class="btn-secondary" disabled>
                 Menunggu Konfirmasi
               </button>
-            </div>
+            </div> -->
             <!-- If confirmed -->
-            <div v-if="videoAccess === 'confirmed'" class="pt-2">
+            <!-- <div v-if="videoAccess === 'confirmed'" class="pt-2">
               <router-link to="/watch" tag="a" class="btn-secondary"
                 >Lihat Film</router-link
               >
+            </div> -->
+            <div class="w-full md:w-4/5">
+              <p class="p-5 ty-container text-center">
+                Terima kasih. Sampai jumpa pada project selanjutnya!
+              </p>
             </div>
           </div>
           <div class="my-20 md:my-auto md:w-1/2 justify-end flex">

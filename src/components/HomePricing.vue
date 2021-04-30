@@ -58,13 +58,13 @@
             </div>
           </div>
         </div>
-        <div class="items-center pb-10 pt-5">
+        <!-- <div class="items-center pb-10 pt-5">
           <div class="text-center">
             <router-link to="/ticket" tag="a" class="btn-secondary">
               Beli Tiket
             </router-link>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
